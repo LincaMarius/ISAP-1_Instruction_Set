@@ -46,25 +46,33 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 
 ## The original instruction set of the SAP-1 computer is:
 
-### LDA n\
+### LDA n \
 0000 nnnn\
 A ← [n]\
 Loads the numeric value from address n into the accumulator.
 
-### ADD n\
+### ADD n \
 0001 nnnn\
 A ← A + [n]\
 Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator.
 
-### SUB n\
+### SUB n \
 0010 nnnn\
 A ← A – [n]\
 Subtracts the numeric value at address n from the numeric value stored in the accumulator and stores the result in the accumulator.
 
-### OUT x\
+### OUT x \
 1110 xxxx\
 OUT_Reg ← A\
 Transfers the numeric value stored in the accumulator to the output register. It has no parameters, x can have any value and is treated as don’t care.
+
+### HLT x \
+1111 xxxx\
+Stops further execution of computer instructions. It has no parameters, x can have any value and is treated as unimportant.
+
+So, we have the instructions coded on the first 4 bits, leaving the next 4 bits to code the address of the operand in the case of the SAP-1 computer.
+
+This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed
 
 
 
