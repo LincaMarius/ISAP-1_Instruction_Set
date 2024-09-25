@@ -17,3 +17,6 @@ https://github.com/LincaMarius/ISAP-Computer
 
 where I optimized the SAP-1 calculator at the block diagram level.
 I obtained four block diagrams:
+
+![ Figure 1 ](/Pictures/Figure1.png)
+
