@@ -48,8 +48,14 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 
 ### LDA n\
 0000 nnnn\
-A ← [n]
-Loads the numeric value from address n into the accumulator
+A ← [n]\
+Loads the numeric value from address n into the accumulator.
+
+### ADD\
+0001 nnnn\
+A ← A + [n]\
+Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator.
+
 
 
 
