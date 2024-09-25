@@ -74,7 +74,7 @@ So, we have the instructions coded on the first 4 bits, leaving the next 4 bits 
 
 This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed
 
-
+We also notice that the instructions 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used
 
 
 
