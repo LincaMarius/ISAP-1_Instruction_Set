@@ -83,3 +83,13 @@ The first instruction we can implement is one that allows us to load an immediat
 But the size of the operand is 4 bits and thus we can load a numerical value that can only be represented on the 4 least significant bits. This number can have values ​​between 0 and 15.
 
 I propose to implement two distinct instructions. The first loads the numeric value for the least significant 4 bits and the second loads the numeric value for the most significant 4 bits of the Accumulator register.
+
+### LDL n
+0011 nnnn\
+A[4-0] ← Imm\
+Loads the numeric value for the least significant 4 bits of the Accumulator
+
+### LDH n
+0100 nnnn\
+A[7-5] ← Imm\
+Loads the numeric value for the most significant 4 bits of the Accumulator
