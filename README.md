@@ -57,9 +57,14 @@ A ← A + [n]\
 Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator.
 
 ### SUB n\
- 0010 nnnn\
+0010 nnnn\
 A ← A – [n]\
 Subtracts the numeric value at address n from the numeric value stored in the accumulator and stores the result in the accumulator.
+
+### OUT x\
+1110 xxxx\
+OUT_Reg ← A\
+Transfers the numeric value stored in the accumulator to the output register. It has no parameters, x can have any value and is treated as don’t care.
 
 
 
