@@ -74,8 +74,12 @@ So, we have the instructions coded on the first 4 bits, leaving the next 4 bits 
 
 This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed
 
-We also notice that the instructions 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used
+We also notice that the instructions 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
 
+## The instruction to load an immediate numeric value into the Accumulator
 
+The first instruction we can implement is one that allows us to load an immediate numeric value into the Accumulator.
 
+But the size of the operand is 4 bits and thus we can load a numerical value that can only be represented on the 4 least significant bits. This number can have values ​​between 0 and 15.
 
+I propose to implement two distinct instructions. The first loads the numeric value for the least significant 4 bits and the second loads the numeric value for the most significant 4 bits of the Accumulator register.
