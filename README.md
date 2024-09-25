@@ -26,5 +26,9 @@ The final block diagram of the Computer Memory system is:
 
 ![ Figure 2 ](/Pictures/Figure2.png)
 
+The final block diagram of the Input system of this computer is:
+
+![ Figure 3 ](/Pictures/Figure3.png)
+
 
 
