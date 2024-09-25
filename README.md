@@ -18,5 +18,13 @@ https://github.com/LincaMarius/ISAP-Computer
 where I optimized the SAP-1 calculator at the block diagram level.
 I obtained four block diagrams:
 
+The final block diagram of the CPU part of the system is: 
+
 ![ Figure 1 ](/Pictures/Figure1.png)
+
+The final block diagram of the Computer Memory system is:
+
+![ Figure 2 ](/Pictures/Figure2.png)
+
+
 
