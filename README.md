@@ -51,10 +51,16 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 A ← [n]\
 Loads the numeric value from address n into the accumulator.
 
-### ADD\
+### ADD n\
 0001 nnnn\
 A ← A + [n]\
 Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator.
+
+### SUB n\
+ 0010 nnnn\
+A ← A – [n]\
+Subtracts the numeric value at address n from the numeric value stored in the accumulator and stores the result in the accumulator.
+
 
 
 
