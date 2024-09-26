@@ -48,6 +48,7 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 
 ### LDA n 
 |Mnemonic|Op code|Format|Data|Operation|Description|
+|--------------------------------------------------|
 |LDA|0000|0000 nnnn|Memory|A ← [n]|Loads the numeric value from address n into the accumulator|
 
 ### ADD n 
