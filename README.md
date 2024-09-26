@@ -42,14 +42,13 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 
 ## The original format of the SAP-1 computer instructions is:
 
-4 bits instruction code + 4 bits operand (memory address)
+|4 bits instruction code | 4 bits operand (memory address)|
 
 ## The original instruction set of the SAP-1 computer is:
 
 ### LDA n 
-0000 nnnn\
-A ← [n]\
-Loads the numeric value from address n into the accumulator.
+|Mnemonic|Op code|Format|Data|Operation|Description|
+|LDA|0000|0000 nnnn|Memory|A ← [n]|Loads the numeric value from address n into the accumulator|
 
 ### ADD n 
 0001 nnnn\
