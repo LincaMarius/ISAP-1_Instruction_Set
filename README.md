@@ -63,8 +63,8 @@ This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed.
 We also notice that the instructions Opcodes: 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
 
 ### LDA instruction – Load the Accumulator
-Binary form: \t 0000 nnnn\
-Operation: \t A ← [n]\
+Binary form:    0000 nnnn\
+Operation:      A ← [n]\
 Loads the numeric value from address n into the accumulator.\
 Example: LDA 9h\
 
