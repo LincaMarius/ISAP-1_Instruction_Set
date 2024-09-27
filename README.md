@@ -93,3 +93,4 @@ Loads the numeric value for the least significant 4 bits of the Accumulator
 0100 nnnn\
 A[7-5] ← Imm\
 Loads the numeric value for the most significant 4 bits of the Accumulator
+
