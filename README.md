@@ -66,7 +66,7 @@ We also notice that the instructions Opcodes: 0011, 0100, 0101, 0110, 0111, 1000
 Binary form:    0000 nnnn \
 Operation:      A ← [n] \
 Loads the numeric value from address n into the accumulator. \
-Example: LDA 9h \
+Example: LDA 9h 
 
 
 
