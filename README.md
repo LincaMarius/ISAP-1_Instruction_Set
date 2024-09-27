@@ -45,7 +45,17 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
 
+
 ## The original instruction set of the SAP-1 computer is:
+
+| Mnemonic | Opcode | Operation                                  |
+|----------|--------|--------------------------------------------|
+| LDA      | 0000   | Load RAM data into Accunulator             |
+| ADD      | 0001   | Add RAM data to Accumulator                |
+| SUB      | 0010   | Substract RAM data from accumulator        |
+| OUT      | 1110   | Load Accumulator data into Output Register |
+| HLT      | 1111   | Stop processing                            |
+
 
 ### LDA n 
 0000 nnnn\
