@@ -42,7 +42,6 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 
 ## The original format of the SAP-1 computer instructions is:
 
-|---------------------------|------------------------------------------|
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
 
