@@ -68,6 +68,8 @@ Operation:      A ← [n] \
 Loads the numeric value from address n into the accumulator. \
 Example: LDA 9h 
 
+The timing diagram for the LDA instruction is as follows:
+![ Figure 5 ](/Pictures/Figure5.png)
 
 
 
