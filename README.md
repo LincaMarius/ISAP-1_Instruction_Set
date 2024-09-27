@@ -73,14 +73,7 @@ The timing diagram for the LDA instruction is as follows:
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-|    |T1 |T2 |T3 |T4 |T5 |
-|EP	 |1	 |0	 |0	 |0	 |0  |
-|LAR |1	 |0	 |1	 |0	 |0  |
-|CP  |0  |1	 |0	 |0	 |0  |
-|PM	 |0	 |1	 |0	 |1	 |0  |
-|LI	 |0	 |1	 |0	 |0	 |0  |
-|EI	 |0	 |0	 |1	 |0	 |0  |
-|LA	 |0	 |0	 |0	 |1	 |0  |
+
 
 
 
