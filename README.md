@@ -76,8 +76,8 @@ We can summarize the value of the time control signals shown in this diagram in 
 
 ![ Table 1 ](/Pictures/Table1.png)
 
-Signals represented in Red: are active when data is written to the Data BUS.
-Signals represented in Green: are active when reading data from the Data BUS.
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
 Signals shown in Black: their activation has no influence on the Data BUS. 
 
 <code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
@@ -96,10 +96,10 @@ The Boolean equations for the signals that are active when the LDA instruction i
 ## ADD instruction – Add to accumulator
 Binary form:  0001 nnnn\
 Operation:    A ← A + [n]\
-Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator.\
+Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator. \
 Example: ADD 8h 
 
-The timing diagram for the LDA instruction is as follows:
+The timing diagram for the ADD instruction is as follows:
 
 ![ Figure 6 ](/Pictures/Figure6.png)
 
@@ -107,8 +107,8 @@ We can summarize the value of the time control signals shown in this diagram in 
 
 ![ Table 2 ](/Pictures/Table2.png)
 
-Signals represented in Red: are active when data is written to the Data BUS.
-Signals represented in Green: are active when reading data from the Data BUS.
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
 Signals shown in Black: their activation has no influence on the Data BUS.
 
 <code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
@@ -124,4 +124,11 @@ Signals shown in Black: their activation has no influence on the Data BUS.
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
+## SUB Instruction – Subtract from accumulator
+Binary form:  0010 nnnn \
+Operation:  A ← A – [n] \
+Subtracts the numeric value at address n from the numeric value stored in the accumulator and stores the result in the accumulator. \
+Example: SUB 5h
+
+The timing diagram for the SUB instruction is as follows:
 
