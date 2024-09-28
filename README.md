@@ -79,5 +79,13 @@ Signals represented in Red: are active when data is written to the Data BUS \
 Signals represented in Green: are active when reading data from the Data BUS \
 Signals shown in Black: their activation has no influence on the Data BUS 
 
+The Boolean equations for the signals that are active when the LDA instruction is executed are:
+-	EP = LDA * T1
+-	LAR = LDA * T1 + LDA * T3 = LDA * ( T1 + T3 )
+-	CP = LDA * T2
+-	PM = LDA * T2 + LDA * T4 = LDA * ( T2 + T4 )
+-	LI = LDA * T2
+-	EI = LDA * T3
+-	LA = LDA * T4
 
 
