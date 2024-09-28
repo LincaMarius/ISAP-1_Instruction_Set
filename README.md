@@ -248,3 +248,35 @@ The Boolean equations for the signals that are active when the LIL instruction i
 -	LAL = LIL * T3
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+
+## LIH instruction – Load immediate value into upper nible of Accumulator
+Binary form: 0100 nnnn \
+Operation: A[7-4] ← Imm \
+This statement is added by me and is useful for loading an immediate numeric value into the Accumulator in its upper half, leaving the lower half unchanged. \
+Example: LIH 5h
+
+The timing diagram for the LIH instruction is as follows:
+
+![ Figure 11 ](/Pictures/Figure11.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 7 ](/Pictures/Table7.png)
+
+Signals represented in Red: are active when data is written to the Data BUS \
+Signals represented in Green: are active when reading data from the Data BUS \
+Signals shown in Black: their activation has no influence on the Data BUS
+
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+
+The Boolean equations for the signals that are active when the LIH instruction is executed are:
+-	EP = LIH * T1
+-	LAR = LIH * T1
+-	CP = LIH * T2
+-	PM = LIH * T2
+-	LI = LIH * T2
+-	EI = LIH * T3
+-	LAH = LIH * T3
+
+<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+
