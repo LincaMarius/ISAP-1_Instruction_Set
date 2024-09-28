@@ -156,4 +156,35 @@ Signals shown in Black: their activation has no influence on the Data BUS.
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
+## OUT instruction – Output data from the accumulator
+Binary form:  1110 pppp \
+Operation:    PORT p ← A \
+Transfers the numeric value stored in the accumulator to Output Port p. \
+Example: OUT 1h
+
+The timing diagram for the OUT instruction is as follows:
+
+![ Figure 8 ](/Pictures/Figure8.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 4 ](/Pictures/Table4.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+
+The Boolean equations for the signals that are active when the OUT instruction is executed are:
+-	EP = OUT * T1
+-	LAR = OUT * T1 + OUT * T3 = OUT * ( T1 + T3 )
+-	CP = OUT * T2
+-	PM = OUT * T2
+-	LI = OUT * T2
+-	EI = OUT * T3
+-	EA = OUT * T4
+-	I/O = OUT * T4
+
+<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
