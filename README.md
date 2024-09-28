@@ -188,3 +188,32 @@ The Boolean equations for the signals that are active when the OUT instruction i
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
+## The HLT instruction – Halt computer
+Binary form:  1111 1111 \
+Operation:  Halt computer \
+Stops further execution of computer instructions. It is an instruction with prefix 1111 and has no parameters. \
+Example: HLT
+
+The timing diagram for the HLT instruction is as follows:
+
+![ Figure 9 ](/Pictures/Figure9.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 5 ](/Pictures/Table5.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+
+The Boolean equations for the signals that are active when the HLT instruction is executed are:
+-	EP = HLT * T1
+-	LAR = HLT * T1
+-	CP = HLT * T2
+-	PM = HLT * T2
+-	LI = HLT * T2
+-	HLT = HLT * T3
+
+<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
