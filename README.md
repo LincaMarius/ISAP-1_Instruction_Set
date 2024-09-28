@@ -92,4 +92,10 @@ The Boolean equations for the signals that are active when the LDA instruction i
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
-test
+### ADD instruction – Add to accumulator
+Binary form: \t 0001 nnnn\
+Operation: \t A ← A + [n]\
+Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator.
+Example: ADD 8h \
+The timing diagram for the LDA instruction is as follows:
+
