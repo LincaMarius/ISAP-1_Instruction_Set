@@ -132,3 +132,15 @@ Example: SUB 5h
 
 The timing diagram for the SUB instruction is as follows:
 
+![ Figure 7 ](/Pictures/Figure7.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 3 ](/Pictures/Table3.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+
