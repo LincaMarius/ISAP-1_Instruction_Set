@@ -73,7 +73,7 @@ The timing diagram for the LDA instruction is as follows: \
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-
+![ Table 1 ](/Pictures/Table1.png)
 
 
 
