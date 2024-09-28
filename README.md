@@ -62,13 +62,14 @@ This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed.
 
 We also notice that the instructions Opcodes: 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
 
-### LDA instruction – Load the Accumulator
+## LDA instruction – Load the Accumulator
 Binary form:    0000 nnnn \
 Operation:      A ← [n] \
 Loads the numeric value from Address n into the Accumulator. \
 Example: LDA 9h 
 
-The timing diagram for the LDA instruction is as follows: \
+The timing diagram for the LDA instruction is as follows:
+
 ![ Figure 5 ](/Pictures/Figure5.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
@@ -92,10 +93,12 @@ The Boolean equations for the signals that are active when the LDA instruction i
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
-### ADD instruction – Add to accumulator
-Binary form: \t 0001 nnnn\
-Operation: \t A ← A + [n]\
-Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator.
+## ADD instruction – Add to accumulator
+Binary form: \tab 0001 nnnn\
+Operation: \tab A ← A + [n]\
+Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator.\
 Example: ADD 8h \
 The timing diagram for the LDA instruction is as follows:
+
+![ Figure 6 ](/Pictures/Figure6.png)
 
