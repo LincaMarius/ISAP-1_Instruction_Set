@@ -217,3 +217,34 @@ The Boolean equations for the signals that are active when the HLT instruction i
 -	HLT = HLT * T3
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+
+## LIL instruction – Load immediate value into lower nible of Accumulator
+Binary form: 0011 nnnn \
+Operation: A[3-0] ← Imm \
+This instruction is added by me and is useful for loading an immediate numeric value into the Accumulator in its lower half, leaving the upper half unchanged. \
+Example: LIL 2h
+
+The timing diagram for the LIL instruction is as follows:
+
+![ Figure 10 ](/Pictures/Figure10.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 6 ](/Pictures/Table6.png)
+
+Signals represented in Red: are active when data is written to the Data BUS \
+Signals represented in Green: are active when reading data from the Data BUS \
+Signals shown in Black: their activation has no influence on the Data BUS
+
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+
+The Boolean equations for the signals that are active when the LIL instruction is executed are:
+-	EP = LIL * T1
+-	LAR = LIL * T1
+-	CP = LIL * T2
+-	PM = LIL * T2
+-	LI = LIL * T2
+-	EI = LIL * T3
+-	LAL = LIL * T3
+
+<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
