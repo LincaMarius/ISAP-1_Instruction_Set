@@ -143,4 +143,17 @@ Signals represented in Green: are active when reading data from the Data BUS. \
 Signals shown in Black: their activation has no influence on the Data BUS.
 
 <code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+-	EP = SUB * T1
+-	LAR = SUB * T1 + SUB * T3 = SUB * ( T1 + T3 )
+-	CP = SUB * T2
+-	PM = SUB * T2 + SUB * T4 = SUB * ( T2 + T4 )
+-	LI = SUB * T2
+-	EI = SUB * T3
+-	LB = SUB * T4
+-	EU = SUB * T5
+-	LA = SUB * T5
+-	SU = SUB * T5
+
+<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+
 
