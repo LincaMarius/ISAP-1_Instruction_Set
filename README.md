@@ -94,11 +94,34 @@ The Boolean equations for the signals that are active when the LDA instruction i
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
 ## ADD instruction – Add to accumulator
-Binary form: \tab 0001 nnnn\
-Operation: \tab A ← A + [n]\
+Binary form:  0001 nnnn\
+Operation:    A ← A + [n]\
 Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator.\
-Example: ADD 8h \
+Example: ADD 8h 
+
 The timing diagram for the LDA instruction is as follows:
 
 ![ Figure 6 ](/Pictures/Figure6.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 2 ](/Pictures/Table2.png)
+
+Signals represented in Red: are active when data is written to the Data BUS.
+Signals represented in Green: are active when reading data from the Data BUS.
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+-	EP = ADD * T1
+-	LAR = ADD * T1 + ADD * T3 = ADD * ( T1 + T3 )
+-	CP = ADD * T2
+-	PM = ADD * T2 + ADD * T4 = ADD * ( T2 + T4 )
+-	LI = ADD * T2
+-	EI = ADD * T3
+-	LB = ADD * T4
+-	EU = ADD * T5
+-	LA = ADD * T5
+
+<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+
 
