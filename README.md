@@ -79,7 +79,7 @@ Signals represented in Red: are active when data is written to the Data BUS.
 Signals represented in Green: are active when reading data from the Data BUS.
 Signals shown in Black: their activation has no influence on the Data BUS. 
 
-If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
 
 The Boolean equations for the signals that are active when the LDA instruction is executed are:
 -	EP = LDA * T1
@@ -90,5 +90,6 @@ The Boolean equations for the signals that are active when the LDA instruction i
 -	EI = LDA * T3
 -	LA = LDA * T4
 
-If we implement the Control Block using Combinational Logic we will use these equations.
+<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
+test
