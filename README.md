@@ -280,3 +280,35 @@ The Boolean equations for the signals that are active when the LIH instruction i
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
+## IN instruction – Input data into the accumulator
+Binary form:  0101 pppp \
+Operation:  A ← PORT p \
+This instruction is added by me and transfers the numeric value from Input Port p to Accumulator. \
+Example: IN 1h
+
+The timing diagram for the IN instruction is as follows:
+
+![ Figure 12 ](/Pictures/Figure12.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 8 ](/Pictures/Table8.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+
+The Boolean equations for the signals that are active when the IN instruction is executed are:
+-	EP = IN * T1
+-	LAR = IN * T1
+-	CP = IN * T2
+-	PM = IN * T2
+-	LI = IN * T2
+-	EI = IN * T3
+-	LA = IN * T4
+-	I/O = IN * T4
+
+<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+
