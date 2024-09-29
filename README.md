@@ -312,3 +312,33 @@ The Boolean equations for the signals that are active when the IN instruction is
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
+## JMP instruction – Unconditional jump to address n
+Binary form:  0110 nnnn \
+Operation:  PC ← Imm \
+This statement is added by me and performs an unconditional jump to Address n. \
+Example: JMP 7h
+
+The timing diagram for the JMP instruction is as follows:
+
+![ Figure 13 ](/Pictures/Figure13.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 9 ](/Pictures/Table9.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+
+The Boolean equations for the signals that are active when the JMP instruction is executed are:
+-	EP = JMP * T1
+-	LAR = JMP * T1
+-	CP = JMP * T2
+-	PM = JMP * T2
+-	LI = JMP * T2
+-	EI = JMP * T3
+-	LP = JMP * T3
+
+<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
