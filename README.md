@@ -353,3 +353,6 @@ The timing diagram for the STA instruction is as follows:
 
 ![ Figure 14 ](/Pictures/Figure14.png)
 
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 10 ](/Pictures/Table10.png)
