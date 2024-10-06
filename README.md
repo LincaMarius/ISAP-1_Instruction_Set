@@ -342,3 +342,14 @@ The Boolean equations for the signals that are active when the JMP instruction i
 -	LP = JMP * T3
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+
+## STA Instruction – Store Accumulator
+Binary form:  0111 nnnn \
+Operation:  [n] ← A \
+This instruction is added by me and has the effect of storing the numeric value present in the Accumulator at address n in RAM. \
+Example: STA 9h
+
+The timing diagram for the STA instruction is as follows:
+
+![ Figure 14 ](/Pictures/Figure14.png)
+
