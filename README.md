@@ -356,3 +356,23 @@ The timing diagram for the STA instruction is as follows:
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
 ![ Table 10 ](/Pictures/Table10.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+
+The Boolean equations for the signals that are active when the STA instruction is executed are:
+-	EP = STA * T1
+-	LAR = STA * T1 + STA * T3 = STA * ( T1 + T3)
+-	CP = STA * T2
+-	PM = STA * T2
+-	LI = STA * T2
+-	EI = STA * T3
+-	EA = STA * T4
+-	DM = STA * T4
+-	W = STA * T4
+
+<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+
