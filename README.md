@@ -92,6 +92,8 @@ The Boolean equations for the signals that are active when the LDA instruction i
 -	LAH = LDA * T4
 -	LAL = LDA * T4
 
+The last two equations are equivalent to: LA = LDA * T4
+
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
 ## ADD instruction – Add to accumulator
