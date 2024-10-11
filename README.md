@@ -89,7 +89,8 @@ The Boolean equations for the signals that are active when the LDA instruction i
 -	PM = LDA * T2 + LDA * T4 = LDA * ( T2 + T4 )
 -	LI = LDA * T2
 -	EI = LDA * T3
--	LA = LDA * T4
+-	LAH = LDA * T4
+-	LAL = LDA * T4
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
