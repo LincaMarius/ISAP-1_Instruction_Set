@@ -48,6 +48,30 @@ This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed.
 
 We also notice that the instructions Opcodes: 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
 
+## NOP instruction – No operation
+Binary form:  **** **** \
+Operation:  no operation \
+The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction. \
+No action is performed. This instruction can be used in programs to delay the execution of an action while waiting for a response from slow peripherals. \
+Example: NOP
+
+The timing diagram for the NOP instruction is:
+
+![ Figure 3 ](/Pictures/Figure3.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## LDA instruction – Load the Accumulator
 Binary form:    0000 nnnn \
 Operation:      A ← [n] \
