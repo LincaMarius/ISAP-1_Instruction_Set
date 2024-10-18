@@ -60,6 +60,9 @@ The timing diagram for the NOP instruction is:
 
 ![ Figure 3 ](/Pictures/Figure3.png)
 
+ALL UNIMPLEMENTED INSTRUCTIONS WILL BE TREATED BY THE ISP-1 CPU AS A NOP INSTRUCTION
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
 
 
 
