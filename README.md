@@ -64,17 +64,29 @@ ALL UNIMPLEMENTED INSTRUCTIONS WILL BE TREATED BY THE ISP-1 CPU AS A NOP INSTRUC
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
+![ Table 1 ](/Pictures/Table1.png)
 
+Signals represented in Red: are active when data is written to the Data BUS \
+Signals represented in Green: are active when reading data from the Data BUS \
+Signals shown in Black: their activation has no influence on the Data BUS
 
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
+The Boolean equations for the signals that are active when the NOP instruction is executed are:
+-	EP = NOP * T1
+-	LAR = NOP * T1
+-	PM = NOP * T2
+-	LI = NOP * T2
+-	CP = NOP * T2
 
+Since steps T1 and T2 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
 
-
-
-
-
-
-
+*If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## LDA instruction – Load the Accumulator
 Binary form:    0000 nnnn \
