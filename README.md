@@ -21,7 +21,7 @@ The final structure of the ISAP-1 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
 
-The final block diagram of the Computer Memory system is:
+The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 
 ![ Figure 2 ](/Pictures/Figure2.png)
 
