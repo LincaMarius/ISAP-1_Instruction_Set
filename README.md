@@ -51,9 +51,10 @@ We also notice that the instructions Opcodes: 0011, 0100, 0101, 0110, 0111, 1000
 ## NOP instruction – No operation
 Binary form:  **** **** \
 Operation:  no operation \
-The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction. \
-No action is performed. This instruction can be used in programs to delay the execution of an action while waiting for a response from slow peripherals. \
 Example: NOP
+
+The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction. \
+No action is performed. This instruction can be used in programs to delay the execution of an action while waiting for a response from slow peripherals.
 
 The timing diagram for the NOP instruction is:
 
