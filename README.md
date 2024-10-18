@@ -6,7 +6,7 @@ By: Lincă Marius Gheorghe.
 
 Pitești, Argeș, România, Europe.
 
-https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set
+https://github.com/LincaMarius
 
 ## About the project, brief description
 
@@ -16,9 +16,8 @@ This project is a continuation of another project made by me:\
 https://github.com/LincaMarius/ISAP-Computer
 
 where I optimized the SAP-1 calculator at the block diagram level.
-I obtained four block diagrams:
 
-The final block diagram of the CPU part of the system is: 
+The final structure of the ISAP-1 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
 
