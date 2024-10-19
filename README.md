@@ -91,8 +91,9 @@ Since steps T1 and T2 are present and identical in any instruction we can say th
 ## LDA instruction – Load the Accumulator
 Binary form:    0000 nnnn \
 Operation:      A ← [n] \
-Loads the numeric value from Address n into the Accumulator. \
 Example: LDA 9h 
+
+Loads the numeric value from Address n into the Accumulator.
 
 The timing diagram for the LDA instruction is as follows:
 
