@@ -227,8 +227,9 @@ All the Boolean equations for the control signals that are active for the instru
 ## OUT instruction – Output data from the accumulator
 Binary form:  1110 pppp \
 Operation:    PORT p ← A \
-Transfers the numeric value stored in the accumulator to Output Port p. \
 Example: OUT 1h
+
+Transfers the numeric value stored in the accumulator to Output Port p.
 
 The timing diagram for the OUT instruction is as follows:
 
