@@ -176,12 +176,13 @@ All the Boolean equations for the control signals that are active for the instru
 ## SUB Instruction – Subtract from accumulator
 Binary form:  0010 nnnn \
 Operation:  A ← A – [n] \
-Subtracts the numeric value at address n from the numeric value stored in the accumulator and stores the result in the accumulator. \
 Example: SUB 5h
+
+Subtracts the numeric value at address n from the numeric value stored in the accumulator and stores the result in the accumulator.
 
 The timing diagram for the SUB instruction is as follows:
 
-![ Figure 7 ](/Pictures/Figure7.png)
+![ Figure 6 ](/Pictures/Figure6.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
