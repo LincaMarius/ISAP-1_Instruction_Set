@@ -97,7 +97,7 @@ Loads the numeric value from Address n into the Accumulator.
 
 The timing diagram for the LDA instruction is as follows:
 
-![ Figure 5 ](/Pictures/Figure5.png)
+![ Figure 4 ](/Pictures/Figure4.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
