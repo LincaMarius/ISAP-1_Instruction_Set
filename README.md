@@ -283,7 +283,7 @@ Example: HLT
 
 The timing diagram for the HLT instruction is as follows:
 
-![ Figure 9 ](/Pictures/Figure9.png)
+![ Figure 8 ](/Pictures/Figure8.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
