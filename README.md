@@ -107,21 +107,22 @@ Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
 Signals shown in Black: their activation has no influence on the Data BUS. 
 
-<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
 The Boolean equations for the signals that are active when the LDA instruction is executed are:
 -	EP = LDA * T1
--	LAR = LDA * T1 + LDA * T3
--	CP = LDA * T2
--	PM = LDA * T2 + LDA * T4
+-	LAR = LDA * T1 + LDA * T3 = LDA * ( T1 + T3 )
+-	PM = LDA * T2
 -	LI = LDA * T2
+-	CP = LDA * T2
 -	EI = LDA * T3
+-	DM = LDA * T4
 -	LAH = LDA * T4
 -	LAL = LDA * T4
 
 The last two equations are equivalent to: LA = LDA * T4
 
-<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+*If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## ADD instruction – Add to accumulator
 Binary form:  0001 nnnn\
