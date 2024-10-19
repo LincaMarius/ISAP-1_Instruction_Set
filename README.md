@@ -143,18 +143,33 @@ Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
 Signals shown in Black: their activation has no influence on the Data BUS.
 
-<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
--	EP = ADD * T1
--	LAR = ADD * T1 + ADD * T3 = ADD * ( T1 + T3 )
--	CP = ADD * T2
--	PM = ADD * T2 + ADD * T4 = ADD * ( T2 + T4 )
--	LI = ADD * T2
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
 -	EI = ADD * T3
+-	DM = ADD * T4
 -	LB = ADD * T4
 -	EU = ADD * T5
--	LA = ADD * T5
+-	LAH = ADD * T5
+-	LAL = ADD * T5
 
-<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+All the Boolean equations for the control signals that are active for the instructions implemented so far are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = LDA * T3 + ADD * T3 = (LDA + ADD) * T3
+-	DM = LDA * T4 + ADD * T4 = (LDA + ADD) * T4
+-	LB = ADD * T4
+-	EU = ADD * T5
+-	LAH = LDA * T4 + ADD * T5
+-	LAL = LDA * T4 + ADD * T5
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## SUB Instruction – Subtract from accumulator
 Binary form:  0010 nnnn \
