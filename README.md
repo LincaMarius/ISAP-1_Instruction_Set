@@ -111,7 +111,7 @@ Signals shown in Black: their activation has no influence on the Data BUS.
 
 The Boolean equations for the signals that are active when the LDA instruction is executed are:
 -	EP = T1
--	LAR = T1
+-	LAR = T1 + LDA * T1
 -	PM = T2
 -	LI = T2
 -	CP = T2
@@ -147,7 +147,7 @@ Signals shown in Black: their activation has no influence on the Data BUS.
 
 The Boolean equations for the signals that are active when the ADD instruction is executed are:
 -	EP = T1
--	LAR = T1
+-	LAR = T1 + ADD * T3
 -	PM = T2
 -	LI = T2
 -	CP = T2
@@ -160,7 +160,7 @@ The Boolean equations for the signals that are active when the ADD instruction i
 
 All the Boolean equations for the control signals that are active for the instructions implemented so far are:
 -	EP = T1
--	LAR = T1
+-	LAR = T1 + LDA * T1 + ADD * T3 = T1 + (LDA + ADD) * T3
 -	PM = T2
 -	LI = T2
 -	CP = T2
@@ -186,23 +186,31 @@ The timing diagram for the SUB instruction is as follows:
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-![ Table 3 ](/Pictures/Table3.png)
+![ Table 4 ](/Pictures/Table4.png)
 
 Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
 Signals shown in Black: their activation has no influence on the Data BUS.
 
-<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
--	EP = SUB * T1
--	LAR = SUB * T1 + SUB * T3 = SUB * ( T1 + T3 )
--	CP = SUB * T2
--	PM = SUB * T2 + SUB * T4 = SUB * ( T2 + T4 )
--	LI = SUB * T2
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the SUB instruction is executed are:
+-	EP = T1
+-	LAR = SUB * T1 + SUB * T3
+-	PM = T2
+-	LI = T2
+-	CP = T2
 -	EI = SUB * T3
+-	DM = SUB * T4
 -	LB = SUB * T4
 -	EU = SUB * T5
--	LA = SUB * T5
+-	LAH = SUB * T5
+-	LAL = SUB * T5
 -	SU = SUB * T5
+
+All the Boolean equations for the control signals that are active for the instructions implemented so far are:
+
+
 
 <code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
 
