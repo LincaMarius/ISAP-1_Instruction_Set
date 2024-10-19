@@ -133,7 +133,7 @@ Adds the numeric value at address n with the numeric value stored in the accumul
 
 The timing diagram for the ADD instruction is as follows:
 
-![ Figure 6 ](/Pictures/Figure6.png)
+![ Figure 5 ](/Pictures/Figure5.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
