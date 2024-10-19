@@ -196,7 +196,7 @@ Signals shown in Black: their activation has no influence on the Data BUS.
 
 The Boolean equations for the signals that are active when the SUB instruction is executed are:
 -	EP = T1
--	LAR = SUB * T1 + SUB * T3
+-	LAR = T1 + SUB * T3
 -	PM = T2
 -	LI = T2
 -	CP = T2
@@ -209,10 +209,20 @@ The Boolean equations for the signals that are active when the SUB instruction i
 -	SU = SUB * T5
 
 All the Boolean equations for the control signals that are active for the instructions implemented so far are:
+-	EP = T1
+-	LAR = T1 + LDA * T1 + ADD * T3 + SUB * T3 = T1 + (LDA + ADD + SUB) * T3
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = LDA * T3 + ADD * T3 + SUB * T3 = (LDA + ADD + SUB) * T3
+-	DM = LDA * T4 + ADD * T4 + SUB * T4 = (LDA + ADD + SUB) * T4
+-	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
+-	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
+-	LAH = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
+-	LAL = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
+-	SU = SUB * T5
 
-
-
-<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+*If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## OUT instruction – Output data from the accumulator
 Binary form:  1110 pppp \
