@@ -233,11 +233,11 @@ Transfers the numeric value stored in the accumulator to Output Port p.
 
 The timing diagram for the OUT instruction is as follows:
 
-![ Figure 8 ](/Pictures/Figure8.png)
+![ Figure 7 ](/Pictures/Figure7.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-![ Table 4 ](/Pictures/Table4.png)
+![ Table 5 ](/Pictures/Table5.png)
 
 Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
