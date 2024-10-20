@@ -443,19 +443,38 @@ Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
 Signals shown in Black: their activation has no influence on the Data BUS.
 
-<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
 The Boolean equations for the signals that are active when the IN instruction is executed are:
--	EP = IN * T1
--	LAR = IN * T1
--	CP = IN * T2
--	PM = IN * T2
--	LI = IN * T2
+-	EP = T1
+-	LAR = T1 + IN * T3
+-	PM = T2
+-	LI = T2
+-	CP = T2
 -	EI = IN * T3
--	LA = IN * T4
 -	I/O = IN * T4
+-	LAH = IN * T4
+-	LAL = IN * T4
 
-<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+All the Boolean equations for the control signals that are active for the instructions implemented so far are:
+-	EP = T1
+-	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + IN * T3 = T1 + (LDA + ADD + SUB + OUT + IN) * T3
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + LIL * T3 + LIH * T3 + IN * T3 = (LDA + ADD + SUB + OUT + LIL + LIH + IN) * T3
+-	DM = LDA * T4 + ADD * T4 + SUB * T4 = (LDA + ADD + SUB) * T4
+-	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
+-	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
+-	LAH = LIH * T3 + LDA * T4 + IN * T4 + ADD * T5 + SUB * T5 = LIH * T3 + (LDA + IN) * T4 + (ADD + SUB) * T5
+-	LAL = LIL * T3 + LDA * T4 + IN * T4 + ADD * T5 + SUB * T5 = LIL * T3 + (LDA + IN) * T4 + (ADD + SUB) * T5
+-	SU = SUB * T5
+-	EA = OUT * T4
+-	I/O = OUT * T4 + IN * T4 = (OUT + IN) * T4
+-	R/W = OUT * T4
+-	HLT = HLT * T3
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## JMP instruction – Unconditional jump to address n
 Binary form:  0110 nnnn \
