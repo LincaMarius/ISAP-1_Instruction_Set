@@ -322,13 +322,14 @@ All the Boolean equations for the control signals that are active for the instru
 -	HLT = HLT * T3
 
 
-<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+*If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## LIL instruction – Load immediate value into lower nible of Accumulator
+## LIL instruction – Load immediate value into lower nibble of Accumulator
 Binary form: 0011 nnnn \
 Operation: A[3-0] ← Imm \
-This instruction is added by me and is useful for loading an immediate numeric value into the Accumulator in its lower half, leaving the upper half unchanged. \
 Example: LIL 2h
+
+This instruction is added by me and is useful for loading an immediate numeric value into the Accumulator in its lower half, leaving the upper half unchanged.
 
 The timing diagram for the LIL instruction is as follows:
 
