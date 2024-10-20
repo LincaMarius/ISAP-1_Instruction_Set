@@ -424,15 +424,16 @@ All the Boolean equations for the control signals that are active for the instru
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## IN instruction – Input data into the accumulator
-Binary form:  0101 pppp \
+## IN Instruction – Input data from an input port into the Accumulator
+Binary form:  1101 pppp \
 Operation:  A ← PORT p \
-This instruction is added by me and transfers the numeric value from Input Port p to Accumulator. \
 Example: IN 1h
+
+This instruction is added by me and transfers the numeric value from Input Port p to Accumulator.
 
 The timing diagram for the IN instruction is as follows:
 
-![ Figure 12 ](/Pictures/Figure12.png)
+![ Figure 11 ](/Pictures/Figure11.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
