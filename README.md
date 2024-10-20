@@ -477,7 +477,7 @@ All the Boolean equations for the control signals that are active for the instru
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## JMP instruction – Unconditional jump to address n
-Binary form:  0110 nnnn \
+Binary form:  1100 nnnn \
 Operation:  PC ← Imm \
 Example: JMP 7h
 
