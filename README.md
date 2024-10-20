@@ -528,18 +528,19 @@ All the Boolean equations for the control signals that are active for the instru
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## STA Instruction – Store Accumulator
-Binary form:  0111 nnnn \
+Binary form:  0101 nnnn \
 Operation:  [n] ← A \
-This instruction is added by me and has the effect of storing the numeric value present in the Accumulator at address n in RAM. \
 Example: STA 9h
+
+This instruction is added by me and has the effect of storing the numeric value present in the Accumulator at address n in Data Memory.
 
 The timing diagram for the STA instruction is as follows:
 
-![ Figure 14 ](/Pictures/Figure14.png)
+![ Figure 13 ](/Pictures/Figure13.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-![ Table 10 ](/Pictures/Table10.png)
+![ Table 11 ](/Pictures/Table11.png)
 
 Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
