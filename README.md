@@ -546,18 +546,37 @@ Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
 Signals shown in Black: their activation has no influence on the Data BUS.
 
-<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
 The Boolean equations for the signals that are active when the STA instruction is executed are:
--	EP = STA * T1
--	LAR = STA * T1 + STA * T3 = STA * ( T1 + T3)
--	CP = STA * T2
--	PM = STA * T2
--	LI = STA * T2
+-	EP = T1
+-	LAR = T1 + STA * T3
+-	PM = T2
+-	LI = T2
+-	CP = T2
 -	EI = STA * T3
 -	EA = STA * T4
 -	DM = STA * T4
--	W = STA * T4
+-	R/W = STA * T4
 
-<code style="color : red">If we implement the Control Block using Combinational Logic we will use these equations.</code>
+All the Boolean equations for the control signals that are active for the instructions implemented so far are:
+-	EP = T1
+-	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + IN * T3 + STA * T3 = T1 + (LDA + ADD + SUB + OUT + IN + STA) * T3
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + LIL * T3 + LIH * T3 + IN * T3 + JMP * T3 + STA * T3 = (LDA + ADD + SUB + OUT + LIL + LIH + IN + LMP + STA) * T3
+-	DM = LDA * T4 + ADD * T4 + SUB * T4 + STA * T4 = (LDA + ADD + SUB + STA) * T4
+-	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
+-	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
+-	LAH = LIH * T3 + LDA * T4 + IN * T4 + ADD * T5 + SUB * T5 = LIH * T3 + (LDA + IN) * T4 + (ADD + SUB) * T5
+-	LAL = LIL * T3 + LDA * T4 + IN * T4 + ADD * T5 + SUB * T5 = LIL * T3 + (LDA + IN) * T4 + (ADD + SUB) * T5
+-	SU = SUB * T5
+-	EA = OUT * T4 + STA * T4 = (OUT + STA) * T4
+-	I/O = OUT * T4 + IN * T4 = (OUT + IN) * T4
+-	R/W = OUT * T4 + STA * T4 = (OUT + STA) * T4
+-	HLT = HLT * T3
+-	LP = JMP * T3
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
 
