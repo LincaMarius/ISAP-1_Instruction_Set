@@ -333,11 +333,11 @@ This instruction is added by me and is useful for loading an immediate numeric v
 
 The timing diagram for the LIL instruction is as follows:
 
-![ Figure 10 ](/Pictures/Figure10.png)
+![ Figure 9 ](/Pictures/Figure9.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-![ Table 6 ](/Pictures/Table6.png)
+![ Table 7 ](/Pictures/Table7.png)
 
 Signals represented in Red: are active when data is written to the Data BUS \
 Signals represented in Green: are active when reading data from the Data BUS \
