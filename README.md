@@ -479,12 +479,13 @@ All the Boolean equations for the control signals that are active for the instru
 ## JMP instruction – Unconditional jump to address n
 Binary form:  0110 nnnn \
 Operation:  PC ← Imm \
-This statement is added by me and performs an unconditional jump to Address n. \
 Example: JMP 7h
+
+This statement is added by me and performs an unconditional jump to Address n.
 
 The timing diagram for the JMP instruction is as follows:
 
-![ Figure 13 ](/Pictures/Figure13.png)
+![ Figure 12 ](/Pictures/Figure12.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
