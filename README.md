@@ -129,7 +129,7 @@ Binary form:  0001 nnnn \
 Operation:    A ← A + [n] \
 Example: ADD 8h 
 
-Adds the numeric value at address n with the numeric value stored in the accumulator and stores the result in the accumulator.
+Adds the numeric value at address n with the numeric value stored in the Accumulator and stores the result in the Accumulator.
 
 The timing diagram for the ADD instruction is as follows:
 
@@ -178,7 +178,7 @@ Binary form:  0010 nnnn \
 Operation:  A ← A – [n] \
 Example: SUB 5h
 
-Subtracts the numeric value at address n from the numeric value stored in the accumulator and stores the result in the accumulator.
+Subtracts the numeric value at address n from the numeric value stored in the Acumulator and stores the result in the Accumulator.
 
 The timing diagram for the SUB instruction is as follows:
 
@@ -229,7 +229,7 @@ Binary form:  1110 pppp \
 Operation:    PORT p ← A \
 Example: OUT 1h
 
-Transfers the numeric value stored in the accumulator to Output Port p.
+Transfers the numeric value stored in the Accumulator to Output Port p.
 
 The timing diagram for the OUT instruction is as follows:
 
