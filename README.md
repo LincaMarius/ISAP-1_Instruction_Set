@@ -1,6 +1,6 @@
-# ISAP-1_Computer_Instruction_Set
+# ISAP-1 Computer Instruction Set
 
-This is the process of optimizing the functionality of the SAP-1 computer at the instruction set level, which I went through.
+This is the process of optimizing the functionality of the SAP-1 computer at the Instruction Set level, which I went through, presented step by step.
 
 By: Lincă Marius Gheorghe.
 
@@ -15,7 +15,7 @@ The goal of this project is to create a more efficient version of the SAP (Simpl
 This project is a continuation of another project made by me:\
 https://github.com/LincaMarius/ISAP-Computer
 
-where I optimized the SAP-1 calculator at the block diagram level.
+where I optimized the SAP-1 computer at the block diagram level.
 
 The final structure of the ISAP-1 computer is:
 
@@ -31,6 +31,14 @@ The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
 
+The instruction format for the ISAP-1 computer is the same. But I'm going to group the no-parameter instructions into a Extended Instruction Set, which has the following form:
+
+| extended instruction prefix 4 bits (0xF) | extended instruction 4 bits |
+|------------------------------------------|-----------------------------|
+
+The instruction set of the ISAP-1 computer has 31 instructions:
+- 15 instructions with parameter
+- 16 instructions without parameter
 
 ## The original instruction set of the SAP-1 computer is:
 
@@ -48,7 +56,7 @@ This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed.
 
 We also notice that the instructions Opcodes: 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
 
-## NOP instruction – No operation
+## NOP instruction – No OPeration
 Binary form:  **** **** \
 Operation:  no operation \
 Example: NOP
@@ -88,7 +96,7 @@ Since steps T1 and T2 are present and identical in any instruction we can say th
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## LDA instruction – Load the Accumulator
+## LDA instruction – LoaD the Accumulator
 Binary form:    0000 nnnn \
 Operation:      A ← [n] \
 Example: LDA 9h 
@@ -124,7 +132,7 @@ The last two equations are equivalent to: LA = LDA * T4
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## ADD instruction – Add to accumulator
+## ADD instruction – ADD to accumulator
 Binary form:  0001 nnnn \
 Operation:    A ← A + [n] \
 Example: ADD 8h 
