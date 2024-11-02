@@ -289,8 +289,12 @@ All the Boolean equations for the control signals that are active for the instru
 ## The HLT instruction – Halt computer
 Binary form:  1111 1111 \
 Operation:  Halt computer \
-Stops further execution of computer instructions. It is an instruction with prefix 1111 and has no parameters. \
 Example: HLT
+
+Stops further execution of computer instructions. It is an instruction with prefix 1111 and has no parameters. \
+
+This statement has no parameter, so it will be implemented as an extended statement. \
+The binary form for the extended HLT instruction will be: 1111 1111
 
 The timing diagram for the HLT instruction is as follows:
 
