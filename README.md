@@ -626,3 +626,19 @@ The Boolean equations for the signals that are active when the CMP instruction i
 -	DM = CMP * T4
 -	LB = CMP * T4
 -	SU = CMP * T5
+
+All the Boolean equations for the control signals that are active for the instructions implemented so far are:
+-	EP = T1
+-	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + CMP * T3 = T1 + (LDA + ADD + SUB + CMP) * T3
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = LDA * T3 + ADD * T3 + SUB * T3 + CMP * T3 = (LDA + ADD + SUB + CMP) * T3
+-	DM = LDA * T4 + ADD * T4 + SUB * T4 + CMP * T4 = (LDA + ADD + SUB + CMP) * T4
+-	LB = ADD * T4 + SUB * T4 + CMP * T4 = (ADD + SUB + CMP) * T4
+-	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
+-	LAH = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
+-	LAL = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
+-	SU = SUB * T5 + CMP * T5 = (SUB + CMP) * T5
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
