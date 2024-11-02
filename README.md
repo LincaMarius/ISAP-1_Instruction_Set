@@ -606,3 +606,23 @@ The timing diagram for the CMP instruction is as follows:
 
 ![ Figure 14 ](/Pictures/Figure14.png)
 
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 12 ](/Pictures/Table12.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the CMP instruction is executed are:
+-	EP = T1
+-	LAR = T1 + CMP * T3
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = CMP * T3
+-	DM = CMP * T4
+-	LB = CMP * T4
+-	SU = CMP * T5
