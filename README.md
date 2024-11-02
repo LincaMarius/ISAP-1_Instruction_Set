@@ -33,8 +33,8 @@ The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 
 The instruction format for the ISAP-1 computer is the same. But I'm going to group the no-parameter instructions into a Extended Instruction Set, which has the following form:
 
-| extended instruction prefix 4 bits (0xF) | extended instruction 4 bits |
-|------------------------------------------|-----------------------------|
+| extended instruction prefix 4 bits (0xF) | extended instruction code 4 bits |
+|------------------------------------------|----------------------------------|
 
 The instruction set of the ISAP-1 computer has 31 instructions:
 - 15 instructions with parameter
@@ -63,6 +63,9 @@ Example: NOP
 
 The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction. \
 No action is performed. This instruction can be used in programs to delay the execution of an action while waiting for a response from slow peripherals.
+
+This instruction has no parameter so it will be implemented as an extended instruction. \
+The binary form for the extended NOP instruction will be: 1111 0000
 
 The timing diagram for the NOP instruction is:
 
