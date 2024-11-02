@@ -595,3 +595,14 @@ All the Boolean equations for the control signals that are active for the instru
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
+## CMP Instruction – Compare with Accumulator
+Binary form:  0110 nnnn \
+Operation:  A ? [n] \
+Example: CMP 2h
+
+Subtracts the numeric value at address n from the numeric value stored in the Accumulator and does NOT store the result in the accumulator. \
+
+The timing diagram for the CMP instruction is as follows:
+
+![ Figure 14 ](/Pictures/Figure14.png)
+
