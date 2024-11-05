@@ -525,7 +525,7 @@ The Boolean equations for the signals that are active when the CPY instruction i
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## JZ instruction – Jump if Zero
-Binary form:  1111 1110 \
+Binary form: 1110 nnnn \
 Operation:  Z = 1 ? PC <- nnnn : PC <- PC+1 \
 Example: JZ 7h
 
@@ -556,3 +556,15 @@ The Boolean equations for the signals that are active when the JZ instruction is
 -	NEXT = JZ * T4
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## JZ instruction – Jump if Carry
+Binary form:  1010 nnnn \
+Operation:  C = 1 ? PC <- nnnn : PC <- PC+1 \
+Example: JC 8h
+
+The program jumps to Address n if the Carry flag is set, otherwise it continues with the next instruction
+
+The timing diagram for the JC instruction is as follows:
+
+![ Figure 17 ](/Pictures/Figure17.png)
+
