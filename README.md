@@ -622,3 +622,15 @@ The Boolean equations for the signals that are active when the JS instruction is
 -	NEXT = JS * T4
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## JF instruction – Far Jump
+Binary form:  0111 nnnn \
+Operation:  I/O [0] <- A; PC <- n \
+Example: JF 2h
+
+The program jumps unconditionally to Address n and loads into port 0 the contents of the Accumulator to set the memory segment.\
+This instruction will work if we have an external 8-bit memory segmentation system implemented connected to output port 0.
+
+The timing diagram for the JC instruction is as follows:
+
+![ Figure 19 ](/Pictures/Figure19.png)
