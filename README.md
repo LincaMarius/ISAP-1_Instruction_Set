@@ -570,3 +570,22 @@ The timing diagram for the JC instruction is as follows:
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
+![ Table 15 ](/Pictures/Table15.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the JC instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = JZ * T3
+-	C * LP = JC * T3
+-	NEXT = JC * T4
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
