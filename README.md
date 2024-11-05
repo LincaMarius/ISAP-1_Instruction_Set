@@ -187,19 +187,6 @@ The Boolean equations for the signals that are active when the ADD instruction i
 -	LAH = ADD * T5
 -	LAL = ADD * T5
 
-All the Boolean equations for the control signals that are active for the instructions implemented so far are:
--	EP = T1
--	LAR = T1 + LDA * T3 + ADD * T3 = T1 + (LDA + ADD) * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = LDA * T3 + ADD * T3 = (LDA + ADD) * T3
--	DM = LDA * T4 + ADD * T4 = (LDA + ADD) * T4
--	LB = ADD * T4
--	EU = ADD * T5
--	LAH = LDA * T4 + ADD * T5
--	LAL = LDA * T4 + ADD * T5
-
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## SUB Instruction – Subtract from accumulator
@@ -237,20 +224,6 @@ The Boolean equations for the signals that are active when the SUB instruction i
 -	LAL = SUB * T5
 -	SU = SUB * T5
 
-All the Boolean equations for the control signals that are active for the instructions implemented so far are:
--	EP = T1
--	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 = T1 + (LDA + ADD + SUB) * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = LDA * T3 + ADD * T3 + SUB * T3 = (LDA + ADD + SUB) * T3
--	DM = LDA * T4 + ADD * T4 + SUB * T4 = (LDA + ADD + SUB) * T4
--	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
--	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
--	LAH = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
--	LAL = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
--	SU = SUB * T5
-
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## OUT instruction – Output data from the accumulator
@@ -285,27 +258,10 @@ The Boolean equations for the signals that are active when the OUT instruction i
 -	I/O = OUT * T4
 -	R/W = OUT * T4
 
-All the Boolean equations for the control signals that are active for the instructions implemented so far are:
--	EP = T1
--	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 = T1 + (LDA + ADD + SUB + OUT) * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 = (LDA + ADD + SUB + OUT) * T3
--	DM = LDA * T4 + ADD * T4 + SUB * T4 = (LDA + ADD + SUB) * T4
--	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
--	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
--	LAH = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
--	LAL = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
--	SU = SUB * T5
--	EA = OUT * T4
--	I/O = OUT * T4
--	R/W = OUT * T4
-
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## The HLT instruction – Halt computer
-Binary form:  1111 1111 \
+Binary form:  1111 ****\
 Operation:  Halt computer \
 Example: HLT
 
@@ -335,25 +291,6 @@ The Boolean equations for the signals that are active when the HLT instruction i
 -	LI = T2
 -	CP = T2
 -	HLT = HLT * T3
-
-All the Boolean equations for the control signals that are active for the instructions implemented so far are:
--	EP = T1
--	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 = T1 + (LDA + ADD + SUB + OUT) * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 = (LDA + ADD + SUB + OUT) * T3
--	DM = LDA * T4 + ADD * T4 + SUB * T4 = (LDA + ADD + SUB) * T4
--	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
--	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
--	LAH = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
--	LAL = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
--	SU = SUB * T5
--	EA = OUT * T4
--	I/O = OUT * T4
--	R/W = OUT * T4
--	HLT = HLT * T3
-
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
@@ -387,24 +324,6 @@ The Boolean equations for the signals that are active when the LIL instruction i
 -	EI = LIL * T3
 -	LAL = LIL * T3
 
-All the Boolean equations for the control signals that are active for the instructions implemented so far are:
--	EP = T1
--	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 = T1 + (LDA + ADD + SUB + OUT) * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + LIL * T3 = (LDA + ADD + SUB + OUT + LIL) * T3
--	DM = LDA * T4 + ADD * T4 + SUB * T4 = (LDA + ADD + SUB) * T4
--	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
--	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
--	LAH = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
--	LAL = LIL * T3 + LDA * T4 + ADD * T5 + SUB * T5 = LIL * T3 + LDA * T4 + (ADD + SUB) * T5
--	SU = SUB * T5
--	EA = OUT * T4
--	I/O = OUT * T4
--	R/W = OUT * T4
--	HLT = HLT * T3
-
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## LIH instruction – Load immediate value into upper nibble of Accumulator
@@ -436,24 +355,6 @@ The Boolean equations for the signals that are active when the LIH instruction i
 -	CP = T2
 -	EI = LIH * T3
 -	LAH = LIH * T3
-
-All the Boolean equations for the control signals that are active for the instructions implemented so far are:
--	EP = T1
--	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 = T1 + (LDA + ADD + SUB + OUT) * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + LIL * T3 + LIH * T3 = (LDA + ADD + SUB + OUT + LIL + LIH) * T3
--	DM = LDA * T4 + ADD * T4 + SUB * T4 = (LDA + ADD + SUB) * T4
--	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
--	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
--	LAH = LIH * T3 + LDA * T4 + ADD * T5 + SUB * T5 = LIH * T3 + LDA * T4 + (ADD + SUB) * T5
--	LAL = LIL * T3 + LDA * T4 + ADD * T5 + SUB * T5 = LIL * T3 + LDA * T4 + (ADD + SUB) * T5
--	SU = SUB * T5
--	EA = OUT * T4
--	I/O = OUT * T4
--	R/W = OUT * T4
--	HLT = HLT * T3
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
@@ -489,24 +390,6 @@ The Boolean equations for the signals that are active when the IN instruction is
 -	LAH = IN * T4
 -	LAL = IN * T4
 
-All the Boolean equations for the control signals that are active for the instructions implemented so far are:
--	EP = T1
--	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + IN * T3 = T1 + (LDA + ADD + SUB + OUT + IN) * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + LIL * T3 + LIH * T3 + IN * T3 = (LDA + ADD + SUB + OUT + LIL + LIH + IN) * T3
--	DM = LDA * T4 + ADD * T4 + SUB * T4 = (LDA + ADD + SUB) * T4
--	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
--	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
--	LAH = LIH * T3 + LDA * T4 + IN * T4 + ADD * T5 + SUB * T5 = LIH * T3 + (LDA + IN) * T4 + (ADD + SUB) * T5
--	LAL = LIL * T3 + LDA * T4 + IN * T4 + ADD * T5 + SUB * T5 = LIL * T3 + (LDA + IN) * T4 + (ADD + SUB) * T5
--	SU = SUB * T5
--	EA = OUT * T4
--	I/O = OUT * T4 + IN * T4 = (OUT + IN) * T4
--	R/W = OUT * T4
--	HLT = HLT * T3
-
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## JMP instruction – Unconditional jump to address n
@@ -537,25 +420,6 @@ The Boolean equations for the signals that are active when the JMP instruction i
 -	LI = T2
 -	CP = T2
 -	EI = JMP * T3
--	LP = JMP * T3
-
-All the Boolean equations for the control signals that are active for the instructions implemented so far are:
--	EP = T1
--	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + IN * T3 = T1 + (LDA + ADD + SUB + OUT + IN) * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + LIL * T3 + LIH * T3 + IN * T3 + JMP * T3 = (LDA + ADD + SUB + OUT + LIL + LIH + IN + LMP) * T3
--	DM = LDA * T4 + ADD * T4 + SUB * T4 = (LDA + ADD + SUB) * T4
--	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
--	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
--	LAH = LIH * T3 + LDA * T4 + IN * T4 + ADD * T5 + SUB * T5 = LIH * T3 + (LDA + IN) * T4 + (ADD + SUB) * T5
--	LAL = LIL * T3 + LDA * T4 + IN * T4 + ADD * T5 + SUB * T5 = LIL * T3 + (LDA + IN) * T4 + (ADD + SUB) * T5
--	SU = SUB * T5
--	EA = OUT * T4
--	I/O = OUT * T4 + IN * T4 = (OUT + IN) * T4
--	R/W = OUT * T4
--	HLT = HLT * T3
 -	LP = JMP * T3
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
@@ -592,25 +456,6 @@ The Boolean equations for the signals that are active when the STA instruction i
 -	DM = STA * T4
 -	R/W = STA * T4
 
-All the Boolean equations for the control signals that are active for the instructions implemented so far are:
--	EP = T1
--	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + IN * T3 + STA * T3 = T1 + (LDA + ADD + SUB + OUT + IN + STA) * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = LDA * T3 + ADD * T3 + SUB * T3 + OUT * T3 + LIL * T3 + LIH * T3 + IN * T3 + JMP * T3 + STA * T3 = (LDA + ADD + SUB + OUT + LIL + LIH + IN + LMP + STA) * T3
--	DM = LDA * T4 + ADD * T4 + SUB * T4 + STA * T4 = (LDA + ADD + SUB + STA) * T4
--	LB = ADD * T4 + SUB * T4 = (ADD + SUB) * T4
--	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
--	LAH = LIH * T3 + LDA * T4 + IN * T4 + ADD * T5 + SUB * T5 = LIH * T3 + (LDA + IN) * T4 + (ADD + SUB) * T5
--	LAL = LIL * T3 + LDA * T4 + IN * T4 + ADD * T5 + SUB * T5 = LIL * T3 + (LDA + IN) * T4 + (ADD + SUB) * T5
--	SU = SUB * T5
--	EA = OUT * T4 + STA * T4 = (OUT + STA) * T4
--	I/O = OUT * T4 + IN * T4 = (OUT + IN) * T4
--	R/W = OUT * T4 + STA * T4 = (OUT + STA) * T4
--	HLT = HLT * T3
--	LP = JMP * T3
-
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## CMP Instruction – Compare with Accumulator
@@ -644,19 +489,5 @@ The Boolean equations for the signals that are active when the CMP instruction i
 -	DM = CMP * T4
 -	LB = CMP * T4
 -	SU = CMP * T5
-
-All the Boolean equations for the control signals that are active for the instructions implemented so far are:
--	EP = T1
--	LAR = T1 + LDA * T3 + ADD * T3 + SUB * T3 + CMP * T3 = T1 + (LDA + ADD + SUB + CMP) * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = LDA * T3 + ADD * T3 + SUB * T3 + CMP * T3 = (LDA + ADD + SUB + CMP) * T3
--	DM = LDA * T4 + ADD * T4 + SUB * T4 + CMP * T4 = (LDA + ADD + SUB + CMP) * T4
--	LB = ADD * T4 + SUB * T4 + CMP * T4 = (ADD + SUB + CMP) * T4
--	EU = ADD * T5 + SUB * T5 = (ADD + SUB) * T5
--	LAH = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
--	LAL = LDA * T4 + ADD * T5 + SUB * T5 = LDA * T4 + (ADD + SUB) * T5
--	SU = SUB * T5 + CMP * T5 = (SUB + CMP) * T5
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
