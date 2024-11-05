@@ -568,3 +568,5 @@ The timing diagram for the JC instruction is as follows:
 
 ![ Figure 17 ](/Pictures/Figure17.png)
 
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
