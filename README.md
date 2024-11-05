@@ -523,3 +523,17 @@ The Boolean equations for the signals that are active when the CPY instruction i
 -	LB = CPY * T3
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## JZ instruction – Jump if Zero
+Binary form:  1111 1110 \
+Operation:  Z = 1 ? PC <- nnnn : PC <- PC+1 \
+Example: JZ 7h
+
+The program jumps to Address n if the Zero flag is set, otherwise it continues with the next instruction \
+
+The timing diagram for the JZ instruction is as follows:
+
+![ Figure 16 ](/Pictures/Figure16.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
