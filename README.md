@@ -589,3 +589,16 @@ The Boolean equations for the signals that are active when the JC instruction is
 -	NEXT = JC * T4
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## JS instruction – Jump if Sign
+Binary form:  1011 nnnn \
+Operation:  S = 1 ? PC <- nnnn : PC <- PC+1 \
+Example: JS 9h
+
+The program jumps to Address n if the Sign flag is set, otherwise it continues with the next instruction
+
+The timing diagram for the JC instruction is as follows:
+
+![ Figure 18 ](/Pictures/Figure18.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
