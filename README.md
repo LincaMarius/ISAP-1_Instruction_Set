@@ -31,8 +31,8 @@ The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
 
-We notice that the upper nibble is used to encode an instruction. \ 
-So, any instruction is encoded on 4 bits. \ 
+We notice that the upper nibble is used to encode an instruction.\ 
+So, any instruction is encoded on 4 bits.\ 
 Thus, we can have a maximum of 2 ^ 4 = 16 instructions.
 
 How can we increase this number?
@@ -45,7 +45,7 @@ This instruction takes the extended instruction type as a parameter. \
 So, we will have 2 ^ 4 = 16 extended instructions. \
 These statements have no parameters.
 
-The instruction format for the ISAP-1 calculator is the same. But I'm going to add the extended instructions, which have the following form:
+The instruction format for the ISAP-1 computer is the same. But I'm going to add the extended instructions, which have the following form:
 
 | extended instruction prefix 4 bits (0xF) | extended instruction code 4 bits |
 |------------------------------------------|----------------------------------|
@@ -54,7 +54,7 @@ The instruction set of the ISAP-1 computer has 31 instructions:
 - 15 instructions with parameter
 - 16 instructions without parameter
 
-If we drop one more statement with a parameter, we can add another 16 statements without a parameter, and we will have a total of 46 statements:
+If we drop one more instruction with a parameter, we can add another 16 instructions without a parameter, and we will have a total of 46 instructions:
 - 14 instructions with parameter
 - 32 instructions without parameter
 
