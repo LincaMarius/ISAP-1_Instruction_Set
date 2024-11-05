@@ -491,3 +491,14 @@ The Boolean equations for the signals that are active when the CMP instruction i
 -	SU = CMP * T5
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## CPY Instruction – Copies the contents of the Accumulator register to the B register
+Binary form:  1111 1110 \
+Operation:  B <- A \
+Example: CPY
+
+Copies the contents of the Accumulator register to the B register.
+
+The timing diagram for the CPY instruction is as follows:
+
+
