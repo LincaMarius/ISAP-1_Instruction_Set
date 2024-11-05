@@ -552,7 +552,7 @@ The Boolean equations for the signals that are active when the JZ instruction is
 -	LI = T2
 -	CP = T2
 -	EI = JZ * T3
--	Z * LP = JZ * T3
+-	LP = JZ * Z * T3
 -	NEXT = JZ * T4
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
@@ -585,7 +585,7 @@ The Boolean equations for the signals that are active when the JC instruction is
 -	LI = T2
 -	CP = T2
 -	EI = JZ * T3
--	C * LP = JC * T3
+-	LP = JC * C * T3
 -	NEXT = JC * T4
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
