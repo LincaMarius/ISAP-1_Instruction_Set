@@ -633,3 +633,13 @@ It's an instruction added by me that does Increment the contents of the Accumula
 The timing diagram for the INC instruction is as follows:
 
 ![ Figure 19 ](/Pictures/Figure19.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 17 ](/Pictures/Table17.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
