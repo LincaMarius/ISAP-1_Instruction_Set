@@ -501,7 +501,7 @@ In this variant, if the microprogram reaches one of steps T5 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## STA Instruction – Store Accumulator
+## STA Instruction – STore Accumulator
 Binary form:  0101 nnnn \
 Operation:  [n] ← A \
 Example: STA 9h
