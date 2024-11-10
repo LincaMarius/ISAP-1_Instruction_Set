@@ -227,7 +227,7 @@ The timing diagram for the SUB instruction is as follows:
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-![ Table 4 ](/Pictures/Table4.png)
+![ Table 4 ](/Tables/Table4.png)
 
 Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
