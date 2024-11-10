@@ -598,7 +598,7 @@ The timing diagram for the CPY instruction is as follows:
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-![ Table 13 ](/Pictures/Table13.png)
+![ Table 13 ](/Tables/Table13.png)
 
 Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
@@ -614,6 +614,14 @@ The Boolean equations for the signals that are active when the CPY instruction i
 -	CP = T2
 -	EA = CPY * T3
 -	LB = CPY * T3
+-	NEXT = CPY * T4 + CPY * T5 + CPY * T6 + CPY * T7 + CPY * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the CPY instruction will use 3/4=0.75 which is 75% of the time compared to 3/8=0.375 and 37.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = CPY * T4
+
+In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
