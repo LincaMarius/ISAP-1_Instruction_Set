@@ -392,7 +392,7 @@ The timing diagram for the LIH instruction is as follows:
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-![ Table 8 ](/Pictures/Table8.png)
+![ Table 8 ](/Tables/Table8.png)
 
 Signals represented in Red: are active when data is written to the Data BUS \
 Signals represented in Green: are active when reading data from the Data BUS \
