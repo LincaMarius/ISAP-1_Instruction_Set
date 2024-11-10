@@ -658,3 +658,14 @@ The Boolean equations for the signals that are active when the INC instruction i
 -	NEXT = INC * T5 + INC * T6 + INC * T7 + INC * T8
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## DEC instruction – Decrement the contents of the Accumulator register
+Binary form:  1111 0010 \
+Operation:  A <- A - 1 \
+Example: DEC
+
+It is an instruction added by me that decrements the contents of the Accumulator Register by one. It is an instruction that has no parameters, so it is an extended instruction.
+
+The timing diagram for the DEC instruction is as follows:
+
+![ Figure 20 ](/Pictures/Figure20.png)
