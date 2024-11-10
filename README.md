@@ -643,3 +643,18 @@ Signals represented in Green: are active when reading data from the Data BUS. \
 Signals shown in Black: their activation has no influence on the Data BUS.
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the INC instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EC1 = INC * T3
+-	LB = INC * T3
+-	EU = INC * T4
+-	LAH = INC * T4
+-	LAL = INC * T4
+-	NEXT = INC * T5 + INC * T6 + INC * T7 + INC * T8
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
