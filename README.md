@@ -585,7 +585,7 @@ In this variant, if the microprogram reaches one of steps T7 and T8, it will not
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## CPY Instruction – Copies the contents of the Accumulator register to the B register
+## CPY instruction – CoPY contents of accumulator register to B register
 Binary form:  1111 1110 \
 Operation:  B <- A \
 Example: CPY
