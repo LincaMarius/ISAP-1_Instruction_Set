@@ -119,6 +119,10 @@ Since steps T1 and T2 are present and identical in any instruction we can say th
 
 Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the NOP instruction will use 2/3=0.67 which is 67% of the time compared to 2/8=0.25 and 25% if we do not use this option.
 
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = NOP * T3
+In this variant, if the microprogram reaches one of the steps T4 - T8, it will not automatically jump to the next instruction and the time related to steps T4 - T8 is lost.
+
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## LDA instruction – LoaD the Accumulator
@@ -157,6 +161,10 @@ The Boolean equations for the signals that are active when the LDA instruction i
 The last two equations are equivalent to: LA = LDA * T4
 
 Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the NOP instruction will use 4/5=0.8 which is 80% of the time compared to 4/8=0.5 and 50% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = NOP * T5
+In this variant, if the microprogram reaches one of the steps T6 - T8, it will not automatically jump to the next instruction and the time related to steps T6 - T8 is lost.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
