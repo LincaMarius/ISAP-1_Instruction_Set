@@ -379,12 +379,12 @@ In this variant, if the microprogram reaches one of steps T5 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## LIH instruction – Load immediate value into upper nibble of Accumulator
+## LIH instruction – Load Immediate value into Higher nibble of accumulator
 Binary form: 0100 nnnn \
 Operation: A[7-4] ← Imm \
 Example: LIH 5h
 
-This statement is added by me and is useful for loading an immediate numeric value into the Accumulator in its upper half, leaving the lower half unchanged.
+This instruction is added by me and is useful for loading an immediate numeric value into the Accumulator in its upper half, leaving the lower half unchanged.
 
 The timing diagram for the LIH instruction is as follows:
 
