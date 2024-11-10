@@ -317,7 +317,7 @@ The timing diagram for the HLT instruction is as follows:
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-![ Table 6 ](/Pictures/Table6.png)
+![ Table 6 ](/Tables/Table6.png)
 
 Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
@@ -331,7 +331,11 @@ The Boolean equations for the signals that are active when the HLT instruction i
 -	PM = T2
 -	LI = T2
 -	CP = T2
--	HLT = HLT * T3
+-	HLT = HLT * T3 + HLT * T4 + HLT * T5 + HLT * T6 + HLT * T7 + HLT * T8
+
+The control signal HLT is active starting from step T3 until the last step T8. In the original design of the SAP-1 computer, a timing diagram is not shown and this instruction is briefly described.
+But from the circuit diagram you can see that gate C34 in the instruction decoder is active when we have the binary code 1111 corresponding to the HLT instruction. So the control signal HLT is not influenced by the state of the T steps.
+This fact can be presented graphically as in figure 8 where we see that for any step T3 – T8 the control signal is high.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
