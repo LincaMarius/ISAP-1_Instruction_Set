@@ -261,7 +261,7 @@ In this variant, if the microprogram reaches one of steps T7 or T8, it will not 
 
 ## OUT instruction – Output data from the accumulator
 Binary form:  1110 pppp \
-Operation:    PORT p ← A \
+Operation:  PORT (p) ← A \
 Example: OUT 1h
 
 Transfers the numeric value stored in the Accumulator to Output Port p.
