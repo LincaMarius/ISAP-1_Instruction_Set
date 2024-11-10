@@ -461,12 +461,12 @@ In this variant, if the microprogram reaches one of steps T6 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## JMP instruction – Unconditional jump to address n
+## JMP instruction – unconditional JuMP to address n
 Binary form:  1100 nnnn \
 Operation:  PC ← Imm \
 Example: JMP 7h
 
-This statement is added by me and performs an unconditional jump to Address n.
+This instruction is added by me and performs an unconditional jump to Address n.
 
 The timing diagram for the JMP instruction is as follows:
 
