@@ -339,7 +339,7 @@ This fact can be presented graphically as in figure 8 where we see that for any 
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## LIL instruction – Load immediate value into lower nibble of Accumulator
+## LIL instruction – Load Immediate value into Lower nibble of accumulator
 Binary form: 0011 nnnn \
 Operation: A[3-0] ← Imm \
 Example: LIL 2h
