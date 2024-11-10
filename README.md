@@ -107,6 +107,7 @@ The Boolean equations for the signals that are active when the NOP instruction i
 -	PM = NOP * T2
 -	LI = NOP * T2
 -	CP = NOP * T2
+-	NEXT = NOP * T3 + NOP * T4 + NOP * T5 + NOP * T6 + NOP * T7 + NOP * T8
 
 Since steps T1 and T2 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
 -	EP = T1
@@ -114,6 +115,7 @@ Since steps T1 and T2 are present and identical in any instruction we can say th
 -	PM = T2
 -	LI = T2
 -	CP = T2
+-	NEXT = NOP * T3 + NOP * T4 + NOP * T5 + NOP * T6 + NOP * T7 + NOP * T8
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
