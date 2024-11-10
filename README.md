@@ -117,6 +117,8 @@ Since steps T1 and T2 are present and identical in any instruction we can say th
 -	CP = T2
 -	NEXT = NOP * T3 + NOP * T4 + NOP * T5 + NOP * T6 + NOP * T7 + NOP * T8
 
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the NOP instruction will use 2/3=0.67 which is 67% of the time compared to 2/8=0.25 and 25% if we do not use this option.
+
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## LDA instruction – LoaD the Accumulator
