@@ -653,8 +653,15 @@ The Boolean equations for the signals that are active when the JZ instruction is
 -	LI = T2
 -	CP = T2
 -	EI = JZ * T3
--	LP = JZ * Z * T3
--	NEXT = JZ * T4
+-	LP = (JZ * Z) * T3
+-	NEXT = JZ * T4 + JZ * T5 + JZ * T6 + JZ * T7 + JZ * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the JZ instruction will use 3/4=0.75 which is 75% of the time compared to 3/8=0.375 and 37.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = JZ * T4
+
+In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
