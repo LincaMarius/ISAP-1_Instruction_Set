@@ -419,9 +419,9 @@ In this variant, if the microprogram reaches one of steps T5 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## IN Instruction – Input data from an input port into the Accumulator
+## IN Instruction – INput data from an input port into the accumulator
 Binary form:  1101 pppp \
-Operation:  A ← PORT p \
+Operation:  A ← PORT (p) \
 Example: IN 1h
 
 This instruction is added by me and transfers the numeric value from Input Port p to Accumulator.
