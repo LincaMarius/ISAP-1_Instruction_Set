@@ -625,12 +625,12 @@ In this variant, if the microprogram reaches one of steps T5 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## JZ instruction – Jump if Zero
-Binary form: 1110 nnnn \
+## JZ instruction – Jump if Zero flag is set
+Binary form:  1001 nnnn \
 Operation:  Z = 1 ? PC <- nnnn : PC <- PC+1 \
 Example: JZ 7h
 
-The program jumps to Address n if the Zero flag is set, otherwise it continues with the next instruction \
+The program jumps to Address n if the Zero flag is set, otherwise it continues with the next instruction
 
 The timing diagram for the JZ instruction is as follows:
 
