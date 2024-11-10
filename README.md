@@ -183,7 +183,7 @@ The timing diagram for the ADD instruction is as follows:
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-![ Table 3 ](/Pictures/Table3.png)
+![ Table 3 ](/Tables/Table3.png)
 
 Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
@@ -203,6 +203,14 @@ The Boolean equations for the signals that are active when the ADD instruction i
 -	EU = ADD * T5
 -	LAH = ADD * T5
 -	LAL = ADD * T5
+-	NEXT = ADD * T6 + ADD * T7 + ADD * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the ADD instruction will use 5/6=0.84 which is 84% of the time compared to 5/8=0.625 and 62.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = ADD * T6 
+
+In this variant, if the microprogram reaches one of steps T7 or T8, it will not automatically jump to the next instruction and the time related to steps T7 and T8 is lost.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
