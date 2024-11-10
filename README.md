@@ -308,7 +308,7 @@ Example: HLT
 
 Stops further execution of computer instructions. It is an instruction with prefix 1111 and has no parameters. \
 
-This statement has no parameter, so it will be implemented as an extended statement. \
+This instruction has no parameter, so it will be implemented as an extended instruction. \
 The binary form for the extended HLT instruction will be: 1111 1111
 
 The timing diagram for the HLT instruction is as follows:
