@@ -152,8 +152,11 @@ The Boolean equations for the signals that are active when the LDA instruction i
 -	DM = LDA * T4
 -	LAH = LDA * T4
 -	LAL = LDA * T4
+-	NEXT = LDA * T5 + LDA * T6 + LDA * T7 + LDA * T8
 
 The last two equations are equivalent to: LA = LDA * T4
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the NOP instruction will use 4/5=0.8 which is 80% of the time compared to 4/8=0.5 and 50% if we do not use this option.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
