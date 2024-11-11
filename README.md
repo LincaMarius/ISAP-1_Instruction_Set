@@ -799,3 +799,9 @@ It is an instruction added by me that decrements the contents of the Accumulator
 The timing diagram for the DEC instruction is as follows:
 
 ![ Figure 20 ](/Pictures/Figure20.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 18 ](/Tables/Table18.png)
+
+
