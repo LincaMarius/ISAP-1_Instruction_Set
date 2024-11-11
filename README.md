@@ -745,7 +745,7 @@ In this variant, if the microprogram reaches one of steps T5 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## The INC instruction – increment the contents of the Accumulator register
+## The INC instruction – INCrement the contents of the accumulator register
 Binary form:  1111 0001 \
 Operation:  A <- A + 1 \
 Example: INC
@@ -789,9 +789,9 @@ In this variant, if the microprogram reaches one of steps T6 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## DEC instruction – Decrement the contents of the Accumulator register
+## DEC instruction – DECrement the contents of the accumulator register
 Binary form:  1111 0010 \
-Operation:  A <- A - 1 \
+Operation:  A <- A-1 \
 Example: DEC
 
 It is an instruction added by me that decrements the contents of the Accumulator Register by one. It is an instruction that has no parameters, so it is an extended instruction.
