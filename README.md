@@ -834,14 +834,14 @@ In this variant, if the microprogram reaches one of steps T6 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## SET instruction – SET the accumulator register
+## NEG instruction – NEGate Accumulator register
 Binary form:  1111 0011 \
-Operation:  A <- 1 \
-Example: SET
+Operation:  A <- 0-A \
+Example: NEG
 
-It is an instruction added by me that sets the contents of the Accumulator Register to one. It is an instruction that has no parameters, so it is an extended instruction.
+It is an instruction added by me that performs the negation of the contents of the Accumulator Register by subtracting values ​​stored in the accumulator from zero, the result is stored in the Accumulator register. It is an instruction that has no parameters, so it is an extended instruction.
 
-The timing diagram for the SET instruction is as follows:
+The timing diagram for the NEG instruction is as follows:
 
 ![ Figure 21 ](/Pictures/Figure21.png)
 
@@ -849,3 +849,20 @@ We can summarize the value of the time control signals shown in this diagram in 
 
 ![ Table 19 ](/Tables/Table19.png)
 
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the SET instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EC = SET * T3
+-	LAH = SET * T3
+-	LAL = SET * T3
+-	SC0 = SET * T3
+-	NEXT = SET * T4 + SET * T5 + SET * T6 + SET * T7 + SET * T8
