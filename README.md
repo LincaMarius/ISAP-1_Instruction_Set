@@ -705,7 +705,7 @@ In this variant, if the microprogram reaches one of steps T5 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## JS instruction – Jump if Sign
+## JS instruction – Jump if Sign flag is set
 Binary form:  1011 nnnn \
 Operation:  S = 1 ? PC <- nnnn : PC <- PC+1 \
 Example: JS 9h
