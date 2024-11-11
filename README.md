@@ -733,8 +733,15 @@ The Boolean equations for the signals that are active when the JS instruction is
 -	LI = T2
 -	CP = T2
 -	EI = JS * T3
--	LP = JS * S * T3
--	NEXT = JS * T4
+-	LP = (JS * S) * T3
+-	NEXT = JS * T4 + JS * T5 + JS * T6 + JS * T7 + JS * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the JS instruction will use 3/4=0.75 which is 75% of the time compared to 3/8=0.375 and 37.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = JS * T4
+
+In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
