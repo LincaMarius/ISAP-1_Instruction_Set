@@ -665,12 +665,12 @@ In this variant, if the microprogram reaches one of steps T5 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## JC instruction – Jump if Carry
+## JC Instruction – Jump if Carry flag is set
 Binary form:  1010 nnnn \
 Operation:  C = 1 ? PC <- nnnn : PC <- PC+1 \
 Example: JC 8h
 
-The program jumps to Address n if the Carry flag is set, otherwise it continues with the next instruction
+The program jumps to Address n if the Carry flag is set, otherwise it continues with the next instruction.
 
 The timing diagram for the JC instruction is as follows:
 
