@@ -834,3 +834,14 @@ In this variant, if the microprogram reaches one of steps T6 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
+## SET instruction – SET the accumulator register
+Binary form:  1111 0011 \
+Operation:  A <- 1 \
+Example: SET
+
+It is an instruction added by me that sets the contents of the Accumulator Register to one. It is an instruction that has no parameters, so it is an extended instruction.
+
+The timing diagram for the SET instruction is as follows:
+
+![ Figure 21 ](/Pictures/Figure21.png)
+
