@@ -758,7 +758,7 @@ The timing diagram for the INC instruction is as follows:
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
-![ Table 17 ](/Pictures/Table17.png)
+![ Table 17 ](/Tables/Table17.png)
 
 Signals represented in Red: are active when data is written to the Data BUS. \
 Signals represented in Green: are active when reading data from the Data BUS. \
@@ -772,12 +772,20 @@ The Boolean equations for the signals that are active when the INC instruction i
 -	PM = T2
 -	LI = T2
 -	CP = T2
--	EC1 = INC * T3
+-	EC = INC * T3
 -	LB = INC * T3
+-	SC0 = INC * T3
 -	EU = INC * T4
 -	LAH = INC * T4
 -	LAL = INC * T4
 -	NEXT = INC * T5 + INC * T6 + INC * T7 + INC * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the INC instruction will use 4/5=0.8 which is 80% of the time compared to 4/8=0.5 and 50% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = INC * T5
+
+In this variant, if the microprogram reaches one of steps T6 - T8, it will not automatically jump to the next instruction and the time related to steps T6 - T8 is lost.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
