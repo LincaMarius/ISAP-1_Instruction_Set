@@ -845,3 +845,7 @@ The timing diagram for the SET instruction is as follows:
 
 ![ Figure 21 ](/Pictures/Figure21.png)
 
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 19 ](/Tables/Table19.png)
+
