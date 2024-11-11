@@ -834,7 +834,7 @@ In this variant, if the microprogram reaches one of steps T6 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## NEG instruction – NEGate Accumulator register
+## NEG instruction – NEGate accumulator register
 Binary form:  1111 0011 \
 Operation:  A <- 0-A \
 Example: NEG
