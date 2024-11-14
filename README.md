@@ -258,7 +258,7 @@ The Boolean equations for the signals that are active when the SUB instruction i
 -	EU = SUB * T5
 -	LAH = SUB * T5
 -	LAL = SUB * T5
--	SU = SUB * T5
+-	F0 = SUB * T5
 -	NEXT = SUB * T6 + SUB * T7 + SUB * T8
 
 Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the SUB instruction will use 5/6=0.84 which is 84% of the time compared to 5/8=0.625 and 62.5% if we do not use this option.
