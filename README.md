@@ -892,3 +892,16 @@ Use of the NEXT signal is optional. The simplified version of this instruction c
 In this variant, if the microprogram reaches one of steps T7 and T8, it will not automatically jump to the next instruction and the time related to steps T7 and T8 is lost.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## CALL instruction – CALL subroutine
+Binary form:  0111 nnnn \
+Operation:  I/O [Fh] <- A PC <- n \
+Example: CALL 9h
+
+It is an instruction added by me that performs the jump to the address of a subroutine. Its parameter is the offset in the segment where the routine is located. The number of the segment to jump to must be loaded into the Accumulator register before this instruction is executed.
+
+The Program Counter for the next instruction and the current Segment number are automatically saved on the stack at the time of execution of this instruction.
+
+The timing diagram for the CALL instruction is as follows:
+
+![ Figure 22 ](/Pictures/Figure22.png)
