@@ -834,7 +834,7 @@ The Boolean equations for the signals that are active when the DEC instruction i
 -	EU = DEC * T4
 -	LAH = DEC * T4
 -	LAL = DEC * T4
--	SU = DEC * T4
+-	F0 = DEC * T4
 -	NEXT = DEC * T5 + DEC * T6 + DEC * T7 + DEC * T8
 
 Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the DEC instruction will use 4/5=0.8 which is 80% of the time compared to 4/8=0.5 and 50% if we do not use this option.
