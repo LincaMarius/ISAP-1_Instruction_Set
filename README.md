@@ -584,7 +584,8 @@ The Boolean equations for the signals that are active when the CMP instruction i
 -	EI = CMP * T3
 -	DM = CMP * T4
 -	LB = CMP * T4
--	SU = CMP * T5
+-	EU = CMP * T5
+-	F0 = CMP * T5
 -	NEXT = CMP * T6 + CMP * T7 + CMP * T8
 
 Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the CMP instruction will use 5/6=0.84 which is 84% of the time compared to 5/8=0.625 and 62.5% if we do not use this option.
