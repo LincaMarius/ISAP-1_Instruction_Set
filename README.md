@@ -893,15 +893,13 @@ In this variant, if the microprogram reaches one of steps T7 and T8, it will not
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## CALL instruction – CALL subroutine
-Binary form:  0111 nnnn \
-Operation:  I/O [Fh] <- A PC <- n \
-Example: CALL 9h
+## PUSH instruction – Pushes the Accumulator onto the stack
+Binary form:  1111 0100 \
+Operation:  [SP-1] <- A \
+Example: PUSH
 
-It is an instruction added by me that performs the jump to the address of a subroutine. Its parameter is the offset in the segment where the routine is located. The number of the segment to jump to must be loaded into the Accumulator register before this instruction is executed.
+It is an instruction added by me which after decrementing the Stack Pointer saves in the Stack the numerical value stored in the Accumulator.
 
-The Program Counter for the next instruction and the current Segment number are automatically saved on the stack at the time of execution of this instruction.
-
-The timing diagram for the CALL instruction is as follows:
+The timing diagram for the PUSH instruction is as follows:
 
 ![ Figure 22 ](/Pictures/Figure22.png)
