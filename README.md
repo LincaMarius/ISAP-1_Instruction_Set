@@ -171,24 +171,14 @@ Signals shown in Black: their activation has no influence on the Data BUS.
 
 The Boolean equations for the signals that are active when the ADD instruction is executed are:
 -	EP = T1
--	LAR = T1 + ADD * T3
--	PM = T2
--	LI = T2
+-	LAR = T1 + ADD * T4
 -	CP = T2
--	EI = ADD * T3
--	DM = ADD * T4
--	LB = ADD * T4
--	EU = ADD * T5
--	LAH = ADD * T5
--	LAL = ADD * T5
--	NEXT = ADD * T6 + ADD * T7 + ADD * T8
-
-Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the ADD instruction will use 5/6=0.84 which is 84% of the time compared to 5/8=0.625 and 62.5% if we do not use this option.
-
-Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
-- NEXT = ADD * T6 
-
-In this variant, if the microprogram reaches one of steps T7 or T8, it will not automatically jump to the next instruction and the time related to steps T7 and T8 is lost.
+-	PM = T3 + ADD * T5
+-	LI = T3
+-	EI = ADD * T4
+-	LB = ADD * T5
+-	EU = ADD * T6
+-	LA = ADD * T6
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
