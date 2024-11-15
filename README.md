@@ -121,7 +121,7 @@ Binary form:    0000 nnnn \
 Operation:      A ← [n] \
 Example: LDA 9h 
 
-Loads the numeric value from Address n into the Accumulator.
+Loads the numeric value from Address [n] into the Accumulator.
 
 The timing diagram for the LDA instruction is as follows:
 
