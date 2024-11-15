@@ -103,16 +103,16 @@ Signals shown in Black: their activation has no influence on the Data BUS
 The Boolean equations for the signals that are active when the NOP instruction is executed are:
 -	EP = NOP * T1
 -	LAR = NOP * T1
--	PM = NOP * T2
--	LI = NOP * T2
--	CP = NOP * T3
+-	CP = NOP * T2
+-	PM = NOP * T3
+-	LI = NOP * T3
 
 Since steps T1, T2 and T3 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
 -	EP = T1
 -	LAR = T1
--	PM = T2
--	LI = T2
--	CP = T3
+-	CP = T2
+-	PM = T3
+-	LI = T3
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
