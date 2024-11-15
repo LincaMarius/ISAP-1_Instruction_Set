@@ -54,6 +54,29 @@ This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed.
 
 We also notice that the instructions Opcodes: 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
 
+These codes are treated by the SAP-1 computer as NOP instructions, the previous table can be completed as follows:
+
+| Mnemonic | Opcode | Operation                                  |
+|----------|--------|--------------------------------------------|
+| LDA      | 0000   | Load RAM data into Accumulator             |
+| ADD      | 0001   | Add RAM data to Accumulator                |
+| SUB      | 0010   | Substract RAM data from accumulator        |
+| NOP      | 0011   | No Operation                               |
+| NOP      | 0100   | No Operation                               |
+| NOP      | 0101   | No Operation                               |
+| NOP      | 0110   | No Operation                               |
+| NOP      | 0111   | No Operation                               |
+| NOP      | 1000   | No Operation                               |
+| NOP      | 1001   | No Operation                               |
+| NOP      | 1010   | No Operation                               |
+| NOP      | 1011   | No Operation                               |
+| NOP      | 1100   | No Operation                               |
+| NOP      | 1101   | No Operation                               |
+| OUT      | 1110   | Load Accumulator data into Output Register |
+| HLT      | 1111   | Stop processing                            |
+
+This is the Complete Instructions Setfor the SAP-1 computer.
+
 ## NOP instruction – No OPeration
 Binary form:  **** **** \
 Operation:  no operation \
