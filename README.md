@@ -217,12 +217,12 @@ The Boolean equations for the signals that are active when the SUB instruction i
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## OUT instruction – Output data from the accumulator
+## OUT instruction – OUTput data from the accumulator
 Binary form:  1110 pppp \
 Operation:  PORT (p) ← A \
 Example: OUT 1h
 
-Transfers the numeric value stored in the Accumulator to Output Port p.
+Transfers the numeric value stored in the Accumulator to Output Port. This instruction has no parameter.
 
 The timing diagram for the OUT instruction is as follows:
 
