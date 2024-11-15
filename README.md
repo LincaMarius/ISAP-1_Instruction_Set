@@ -159,15 +159,6 @@ The timing diagram for the ADD instruction is as follows:
 
 ![ Figure 5 ](/Pictures/Figure5.png)
 
-Logical and Arithmetic Unit control is done using three control lines grouped under the name Func.
-
-The coding of the function executed by the Logical and Arithmetic Unit is as follows:
-
-| F2 | F1 | F0 | The function         |
-|----|----|----|----------------------|
-|  0 |  0 |  0 | Adding A and B       |
-|  0 |  0 |  1 | Subtract B from A    |
-
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
 ![ Table 3 ](/Tables/Table3.png)
