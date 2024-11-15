@@ -249,15 +249,12 @@ The Boolean equations for the signals that are active when the OUT instruction i
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## The HLT instruction – Halt computer
+## The HLT instruction – HaLT computer
 Binary form:  1111 ****\
 Operation:  Halt computer \
 Example: HLT
 
 Stops further execution of computer instructions. It is an instruction with prefix 1111 and has no parameters. \
-
-This instruction has no parameter, so it will be implemented as an extended instruction. \
-The binary form for the extended HLT instruction will be: 1111 1111
 
 The timing diagram for the HLT instruction is as follows:
 
@@ -276,14 +273,14 @@ Signals shown in Black: their activation has no influence on the Data BUS.
 The Boolean equations for the signals that are active when the HLT instruction is executed are:
 -	EP = T1
 -	LAR = T1
--	PM = T2
--	LI = T2
 -	CP = T2
--	HLT = HLT * T3 + HLT * T4 + HLT * T5 + HLT * T6 + HLT * T7 + HLT * T8
+-	PM = T3
+-	LI = T3
+-	HLT = HLT * T4 + HLT * T5 + HLT * T6
 
-The control signal HLT is active starting from step T3 until the last step T8. In the original design of the SAP-1 computer, a timing diagram is not shown and this instruction is briefly described.
-But from the circuit diagram you can see that gate C34 in the instruction decoder is active when we have the binary code 1111 corresponding to the HLT instruction. So the control signal HLT is not influenced by the state of the T steps.
-This fact can be presented graphically as in figure 8 where we see that for any step T3 – T8 the control signal is high.
+The control signal HLT is active starting from step T4 until the last step T6. In the original design of the SAP-1 computer, a timing diagram is not shown and this instruction is briefly described.
+But from the circuit diagram you can see that gate C34 in the instruction decoder is active when we have the binary code 1111 corresponding to the HLT instruction. So, the control signal HLT is not influenced by the state of the T steps.
+This fact can be presented graphically as in figure 8 where we see that for any step T4 – T6 the control signal is high.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
