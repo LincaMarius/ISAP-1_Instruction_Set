@@ -105,23 +105,14 @@ The Boolean equations for the signals that are active when the NOP instruction i
 -	LAR = NOP * T1
 -	PM = NOP * T2
 -	LI = NOP * T2
--	CP = NOP * T2
--	NEXT = NOP * T3 + NOP * T4 + NOP * T5 + NOP * T6 + NOP * T7 + NOP * T8
+-	CP = NOP * T3
 
-Since steps T1 and T2 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
+Since steps T1, T2 and T3 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
 -	EP = T1
 -	LAR = T1
 -	PM = T2
 -	LI = T2
--	CP = T2
--	NEXT = NOP * T3 + NOP * T4 + NOP * T5 + NOP * T6 + NOP * T7 + NOP * T8
-
-Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the NOP instruction will use 2/3=0.67 which is 67% of the time compared to 2/8=0.25 and 25% if we do not use this option.
-
-Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
-- NEXT = NOP * T3
-
-In this variant, if the microprogram reaches one of the steps T4 - T8, it will not automatically jump to the next instruction and the time related to steps T4 - T8 is lost.
+-	CP = T3
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
