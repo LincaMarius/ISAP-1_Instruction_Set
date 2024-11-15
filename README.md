@@ -182,12 +182,12 @@ The Boolean equations for the signals that are active when the ADD instruction i
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## SUB Instruction – Subtract from accumulator
+## SUB Instruction – SUBtract from accumulator
 Binary form:  0010 nnnn \
 Operation:  A ← A – [n] \
 Example: SUB 5h
 
-Subtracts the numeric value at address n from the numeric value stored in the Acumulator and stores the result in the Accumulator.
+Subtracts the numeric value at address [n] from the numeric value stored in the Acumulator and stores the result in the Accumulator.
 
 The timing diagram for the SUB instruction is as follows:
 
