@@ -153,7 +153,7 @@ Binary form:  0001 nnnn \
 Operation:    A ← A + [n] \
 Example: ADD 8h 
 
-Adds the numeric value at address n with the numeric value stored in the Accumulator and stores the result in the Accumulator.
+Adds the numeric value at Address [n] with the numeric value stored in the Accumulator and stores the result in the Accumulator.
 
 The timing diagram for the ADD instruction is as follows:
 
