@@ -27,7 +27,7 @@ The block diagram of the Central Processing Unit of the SAP-1 computer is:
 ![ Figure 2 ](/Pictures/Figure2.png)
 
 
-## The original format of the SAP-1 computer instructions is:
+### The original format of the SAP-1 computer instructions is:
 
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
@@ -38,30 +38,7 @@ So, any instruction is encoded on 4 bits.
 
 Thus, we can have a maximum of 2 ^ 4 = 16 instructions.
 
-How can we increase this number?
-
-We will reserve an instruction code to indicate a special instruction, a prefix that tells the instruction decoder that we have a special instruction. I named this as a prefix for extended instructions.
-
-I chose the prefix as 1111 in binary or 0xF in hexadecimal.
-
-This instruction takes the extended instruction type as a parameter. \
-So, we will have 2 ^ 4 = 16 extended instructions. \
-These extended instructions have no parameters.
-
-The instruction format for the ISAP-1 computer is the same. But I'm going to add the extended instructions, which have the following form:
-
-| extended instruction prefix 4 bits (0xF) | extended instruction code 4 bits |
-|------------------------------------------|----------------------------------|
-
-The instruction set of the ISAP-1 computer has 31 instructions:
-- 15 instructions with parameter
-- 16 instructions without parameter
-
-If we drop one more instruction with a parameter, we can add another 16 instructions without a parameter, and we will have a total of 46 instructions:
-- 14 instructions with parameter
-- 32 instructions without parameter
-
-## The original instruction set of the SAP-1 computer is:
+### The original instruction set of the SAP-1 computer is:
 
 | Mnemonic | Opcode | Operation                                  |
 |----------|--------|--------------------------------------------|
@@ -83,10 +60,6 @@ Operation:  no operation \
 Example: NOP
 
 The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction. \
-No action is performed. This instruction can be used in programs to delay the execution of an action while waiting for a response from slow peripherals.
-
-This instruction has no parameter so it will be implemented as an extended instruction. \
-The binary form for the extended NOP instruction will be: 1111 0000
 
 The timing diagram for the NOP instruction is:
 
