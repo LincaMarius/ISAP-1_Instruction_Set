@@ -139,24 +139,12 @@ Signals shown in Black: their activation has no influence on the Data BUS.
 
 The Boolean equations for the signals that are active when the LDA instruction is executed are:
 -	EP = T1
--	LAR = T1 + LDA * T3
--	PM = T2
--	LI = T2
+-	LAR = T1 + LDA * T4
 -	CP = T2
--	EI = LDA * T3
--	DM = LDA * T4
--	LAH = LDA * T4
--	LAL = LDA * T4
--	NEXT = LDA * T5 + LDA * T6 + LDA * T7 + LDA * T8
-
-The last two equations are equivalent to: LA = LDA * T4
-
-Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the NOP instruction will use 4/5=0.8 which is 80% of the time compared to 4/8=0.5 and 50% if we do not use this option.
-
-Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
-- NEXT = LDA * T5
-
-In this variant, if the microprogram reaches one of the steps T6 - T8, it will not automatically jump to the next instruction and the time related to steps T6 - T8 is lost.
+-	PM = T3 + LDA * T5
+-	LI = T3
+-	EI = LDA * T4
+-	LA = LDA * T5
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
