@@ -253,11 +253,24 @@ Example: ADD 8h
 
 Adds the numeric value at Address [n] with the numeric value stored in the Accumulator and stores the result in the Accumulator.
 
-The timing diagram for the ADD instruction is as follows:
+The timing diagram for the ADD instruction implemented on SAP-1 Computer is as follows:
 
-![ Figure 5 ](/Pictures/Figure5.png)
+![ Figure 9 ](/Pictures/Figure9.png)
 
-We can summarize the value of the time control signals shown in this diagram in the following table:
+The timing diagram for the ADD instruction implemented on ISAP-1 Computer is as follows:
+
+![ Figure 10 ](/Pictures/Figure10.png)
+
+Logical and Arithmetic Unit control is done using three control lines grouped under the name FUNC.
+
+The coding of the function executed by the Logical and Arithmetic Unit is as follows:
+
+| F2 | F1 | F0 | The function         |
+|----|----|----|- --------------------|
+|  0 |  0 |  0 | Adding A and B       |
+|  0 |  0 |  1 | Subtract B from A    |
+
+We can summarize the value of the control signals over time shown in these diagrams in the following tables:
 
 ![ Table 3 ](/Tables/Table3.png)
 
