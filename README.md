@@ -440,11 +440,18 @@ Binary form:  1111 ****\
 Operation:  Halt computer \
 Example: HLT
 
-Stops further execution of computer instructions. It is an instruction with prefix 1111 and has no parameters. \
+Stops further execution of computer instructions. It is an instruction with prefix 1111 and has no parameters.
 
-The timing diagram for the HLT instruction is as follows:
+This instruction has no parameter, so it will be implemented as an extended instruction. \
+The binary form for the extended HLT instruction will be: 1111 1111
 
-![ Figure 8 ](/Pictures/Figure8.png)
+The timing diagram for the HLT instruction implemented on SAP-1 Computer is as follows:
+
+![ Figure 15 ](/Pictures/Figure15.png)
+
+The timing diagram for the HLT instruction implemented on ISAP-1 Computer is as follows:
+
+![ Figure 16 ](/Pictures/Figure16.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
