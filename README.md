@@ -1,4 +1,5 @@
 # ISAP-1 Computer Instruction Set
+The improved version of the SAP-1 computer.
 
 This is the process of optimizing the functionality of the SAP-1 computer at the Instruction Set level, which I went through, presented step by step.
 
@@ -12,15 +13,18 @@ https://github.com/LincaMarius
 
 The goal of this project is to create a more efficient version of the SAP (Simple As Possible) computer, but with minimal changes so that the instruction format remains the same.
 
-This Mini Project is part of a Project made by me:
+This project is part of another project made by me: \
 https://github.com/LincaMarius/ISAP-1_Computer_Project
 
-where I optimized the SAP-1 calculator step by step to create my own version called ISAP-1 (Improved SAP-1)
+where I optimized the SAP-1 calculator step by step to create my own version called ISAP-1 (Improved SAP-1).
 
-## Version 1
 The original structure of the SAP-1 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
+
+The final structure of the ISAP-1 computer is:
+
+![ Figure 2 ](/Pictures/Figure2.png)
 
 The block diagram of the Central Processing Unit of the SAP-1 computer is:
 
