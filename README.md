@@ -148,7 +148,7 @@ Signals shown in Black: their activation has no influence on the Data BUS
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
-The Boolean equations for the signals that are active when the NOP instruction is executed are:
+The Boolean equations for the signals that are active when the NOP instruction is executed for computer SAP-1 are:
 -	EP = NOP * T1
 -	LAR = NOP * T1
 -	CP = NOP * T2
@@ -161,6 +161,29 @@ Since steps T1, T2 and T3 are present and identical in any instruction we can sa
 -	CP = T2
 -	PM = T3
 -	LI = T3
+
+The Boolean equations for the signals that are active when the NOP instruction is executed for computer ISAP-1 are:
+-	EP = NOP * T1
+-	LAR = NOP * T1
+-	PM = NOP * T2
+-	LI = NOP * T2
+-	CP = NOP * T2
+-	NEXT = NOP * T3 + NOP * T4 + NOP * T5 + NOP * T6 + NOP * T7 + NOP * T8
+
+Since steps T1, T2 and T3 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
+-	EP = T1
+-	LAR = T1
+-	CP = T2
+-	PM = T3
+-	LI = T3
+-	NEXT = NOP * T3 + NOP * T4 + NOP * T5 + NOP * T6 + NOP * T7 + NOP * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the NOP instruction will use 2/3=0.67 which is 67% of the time compared to 2/8=0.25 and 25% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = NOP * T3
+
+In this variant, if the microprogram reaches one of the steps T4 - T8, it will not automatically jump to the next instruction and the time related to steps T4 - T8 is lost. This variant is useful because it reduces the number of logic gates used in the implementation of the Control Unit.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
