@@ -113,15 +113,32 @@ Binary form:  **** **** \
 Operation:  no operation \
 Example: NOP
 
-The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction. \
+The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction.
 
-The timing diagram for the NOP instruction is:
+No action is performed. This instruction can be used in programs to delay the execution of an action while waiting for a response from slow peripherals.
 
-![ Figure 3 ](/Pictures/Figure3.png)
+The binary form for the extended NOP instruction will be: 1111 0000 \
+This instruction has no parameter so it will be implemented as an Extended Instruction.
+
+The original timing diagram for the NOP instruction of the SAP-1 computer is:
+
+![ Figure 5 ](/Pictures/Figure5.png)
+
+All instructions of the SAP-1 computer are executed in 6 steps noted in the diagram and wiring diagram T1 - T6. The first 3 steps are the Fetch portion and the last 3 are the Execution portion of the instruction. The Fetch part of the statement is identical for all statements. The Execution part is specific to each individual instruction.
+
+The timing diagram for the NOP instruction of the ISAP-1 computer is:
+
+![ Figure 6 ](/Pictures/Figure6.png)
+
+All instructions of the ISAP-1 computer are executed in 8 steps or more (if necessary I will increase the number of steps) noted in the diagram and in the wiring diagram T1 – T8. The first 2 steps are the Fetch portion and the last 6 are the Execution portion of the instruction.
+
+The Fetch part of the statement is identical for all statements. The Fetch part of the instructions executed by the SAP-1 computer had 3 steps, but the T2 step was only used to increment the Program Counter. Since the Program Counter is not used in step T3, steps T2 and T3 can be combined. So the current instruction will be loaded from memory and the Program Counter will be incremented in the same step labeled T2.
+
+If this approach was used by the authors, an increase in the instruction execution speed was achieved by 1/6 = 0.167, so 16.7%.
 
 ALL UNIMPLEMENTED INSTRUCTIONS WILL BE TREATED BY THE SAP-1 CPU AS A NOP INSTRUCTION
 
-We can summarize the value of the time control signals shown in this diagram in the following table:
+We can summarize the value of the control signals over time shown in these diagrams in the following tables:
 
 ![ Table 1 ](/Tables/Table1.png)
 
