@@ -395,7 +395,7 @@ The timing diagram for the OUT instruction implemented on ISAP-1 Computer is as 
 
 ![ Figure 14 ](/Pictures/Figure14.png)
 
-We can summarize the value of the time control signals shown in this diagram in the following table:
+We can summarize the value of the control signals over time shown in these diagrams in the following tables:
 
 ![ Table 5 ](/Tables/Table5.png)
 
@@ -405,7 +405,7 @@ Signals shown in Black: their activation has no influence on the Data BUS.
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
-The Boolean equations for the signals that are active when the OUT instruction is executed are:
+The Boolean equations for the signals that are active when the OUT instruction is executed for computer SAP-1 are:
 -	EP = T1
 -	LAR = T1
 -	CP = T2
@@ -413,6 +413,25 @@ The Boolean equations for the signals that are active when the OUT instruction i
 -	LI = T3
 -	EA = OUT * T4
 -	I/O = OUT * T4
+
+The Boolean equations for the signals that are active when the OUT instruction is executed for computer ISAP-1 are:
+-	EP = T1
+-	LAR = T1 + OUT * T3
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = OUT * T3
+-	EA = OUT * T4
+-	I/O = OUT * T4
+-	R/W = OUT * T4
+-	NEXT = OUT * T5 + OUT * T6 + OUT * T7 + OUT * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the OUT instruction will use 4/5=0.8 which is 80% of the time compared to 4/8=0.5 and 50% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = OUT * T5
+
+In this variant, if the microprogram reaches one of the steps T6 - T8, it will not automatically jump to the next instruction and the time related to steps T6 - T8 is lost. This variant is useful because it reduces the number of logic gates used in the implementation of the Control Unit.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
