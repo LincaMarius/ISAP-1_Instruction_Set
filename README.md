@@ -56,11 +56,7 @@ Thus, we can have a maximum of 2 ^ 4 = 16 instructions.
 | OUT      | 1110   | Load Accumulator data into Output Register |
 | HLT      | 1111   | Stop processing                            |
 
-So, we have the instructions coded on the first 4 bits, leaving the next 4 bits to code the address of the operand in the case of the SAP-1 computer.
-
-This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed.
-
-We also notice that the instructions Opcodes: 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
+We can notice that the instructions 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
 
 These codes are treated by the SAP-1 computer as NOP instructions, the previous table can be completed as follows:
 
@@ -84,6 +80,33 @@ These codes are treated by the SAP-1 computer as NOP instructions, the previous 
 | HLT      | 1111   | Stop processing                            |
 
 This is the Complete Instructions Setfor the SAP-1 computer.
+
+So, we have the instructions coded on the first 4 bits, leaving the next 4 bits to code the address of the operand in the case of the SAP-1 computer.
+
+This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed
+
+How can we increase this number?
+
+We will reserve an instruction code to indicate a special instruction, a prefix that tells the instruction decoder that we have a special instruction. I named this as a prefix for Extended Instructions.
+
+I chose the prefix as 1111 in binary or 0xF in hexadecimal.
+
+This instruction takes the extended instruction type as a parameter. \
+So, we will have 2 ^ 4 = 16 extended instructions. \
+These instructions have no parameters.
+
+The instruction format for the ISAP-1 computer is the same. But I'm going to add the extended instructions, which have the following form:
+
+| extended instruction prefix 4 bits (0xF) | extended instruction code 4 bits |
+|------------------------------------------|----------------------------------|
+
+The instruction set of the ISAP-1 computer has 31 instructions:
+- 15 instructions with parameter
+- 16 instructions without parameter
+
+If we drop one more instruction with a parameter, we can add another 16 instructions without a parameter, and we will have a total of 46 instructions:
+- 14 instructions with parameter
+- 32 instructions without parameter
 
 ## NOP instruction – No OPeration
 Binary form:  **** **** \
