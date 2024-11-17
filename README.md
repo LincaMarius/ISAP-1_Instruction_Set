@@ -26,9 +26,13 @@ The final structure of the ISAP-1 computer is:
 
 ![ Figure 2 ](/Pictures/Figure2.png)
 
-The block diagram of the Central Processing Unit of the SAP-1 computer is:
+The original block diagram of the Central Processing Unit of the SAP-1 computer is:
 
-![ Figure 2 ](/Pictures/Figure2.png)
+![ Figure 3 ](/Pictures/Figure3.png)
+
+The final block diagram of the Central Processing Unit of the ISAP-1 computer is:
+
+![ Figure 4 ](/Pictures/Figure4.png)
 
 
 ### The original format of the SAP-1 computer instructions is:
