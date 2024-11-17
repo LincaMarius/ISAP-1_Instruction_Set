@@ -194,9 +194,13 @@ Example: LDA 9h
 
 Loads the numeric value from Address [n] into the Accumulator.
 
-The timing diagram for the LDA instruction is as follows:
+The timing diagram for the LDA instruction implemented on SAP-1 Computer is as follows:
 
-![ Figure 4 ](/Pictures/Figure4.png)
+![ Figure 7 ](/Pictures/Figure7.png)
+
+The timing diagram for the LDA instruction implemented on ISAP-1 Computer is as follows:
+
+![ Figure 8 ](/Pictures/Figure8.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
