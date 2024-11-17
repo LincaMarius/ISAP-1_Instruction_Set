@@ -321,9 +321,13 @@ Example: SUB 5h
 
 Subtracts the numeric value at address [n] from the numeric value stored in the Acumulator and stores the result in the Accumulator.
 
-The timing diagram for the SUB instruction is as follows:
+The timing diagram for the SUB instruction implemented on SAP-1 Computer is as follows:
 
-![ Figure 6 ](/Pictures/Figure6.png)
+![ Figure 11 ](/Pictures/Figure11.png)
+
+The timing diagram for the SUB instruction implemented on ISAP-1 Computer is as follows:
+
+![ Figure 12 ](/Pictures/Figure12.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
