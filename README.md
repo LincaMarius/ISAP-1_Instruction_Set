@@ -202,7 +202,7 @@ The timing diagram for the LDA instruction implemented on ISAP-1 Computer is as 
 
 ![ Figure 8 ](/Pictures/Figure8.png)
 
-We can summarize the value of the time control signals shown in this diagram in the following table:
+We can summarize the value of the control signals over time shown in these diagrams in the following tables:
 
 ![ Table 2 ](/Tables/Table2.png)
 
