@@ -376,15 +376,24 @@ In this variant, if the microprogram reaches one of the steps T6 or T8, it will 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
 ## OUT instruction – OUTput data from the accumulator
+Binary form:  1110 **** \
+Operation:  PORT (*) ← A \
+Example: OUT *
+
+Transfers the numeric value stored in the Accumulator to Output Port. This instruction has no parameter.
+
+For the ISAP-1 computer this instruction has parameter [p]. So, 16 output ports can be accessed.
 Binary form:  1110 pppp \
 Operation:  PORT (p) ← A \
 Example: OUT 1h
 
-Transfers the numeric value stored in the Accumulator to Output Port. This instruction has no parameter.
+The timing diagram for the OUT instruction implemented on SAP-1 Computer is as follows:
 
-The timing diagram for the OUT instruction is as follows:
+![ Figure 13 ](/Pictures/Figure13.png)
 
-![ Figure 7 ](/Pictures/Figure7.png)
+The timing diagram for the OUT instruction implemented on ISAP-1 Computer is as follows:
+
+![ Figure 14 ](/Pictures/Figure14.png)
 
 We can summarize the value of the time control signals shown in this diagram in the following table:
 
