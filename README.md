@@ -695,6 +695,17 @@ In this variant, if the microprogram reaches one of steps T6 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
+## CMP Instruction – CoMPare with accumulator
+Binary form:  0110 nnnn \
+Operation:  A ? [n] \
+Example: CMP 2h
 
+Subtracts the numeric value at Address [n] from the numeric value stored in the Accumulator and does NOT store the result in the Accumulator.
 
+The timing diagram for the CMP instruction is as follows:
 
+![ Figure 22 ](/Pictures/Figure22.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 12 ](/Tables/Table12.png)
