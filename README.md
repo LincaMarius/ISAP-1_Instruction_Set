@@ -492,3 +492,45 @@ The control signal HLT is active starting from step T3 until the last step T8.
 This fact can be presented graphically as in figure 16 where we see that for any step T3 – T8 the control signal is high.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## LIL instruction – Load Immediate value into Lower nibble of accumulator
+Binary form: 0011 nnnn \
+Operation: A[3-0] ← Imm \
+Example: LIL 2h
+
+This instruction is added by me and is useful for loading an immediate numeric value into the Accumulator in its lower half, leaving the upper half unchanged.
+
+The timing diagram for the LIL instruction is as follows:
+
+![ Figure 17 ](/Pictures/Figure17.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 7 ](/Tables/Table7.png)
+
+Signals represented in Red: are active when data is written to the Data BUS \
+Signals represented in Green: are active when reading data from the Data BUS \
+Signals shown in Black: their activation has no influence on the Data BUS
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the LIL instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = LIL * T3
+-	LAL = LIL * T3
+-	NEXT = LIL * T4 + LIL * T5 + LIL * T6 + LIL * T7 + LIL * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the LIL instruction will use 3/4=0.75 which is 75% of the time compared to 3/8=0.375 and 37.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = LIL * T4
+
+In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
+
