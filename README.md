@@ -652,3 +652,49 @@ Use of the NEXT signal is optional. The simplified version of this instruction c
 In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
 
 * If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## STA Instruction – STore Accumulator
+Binary form:  0101 nnnn \
+Operation:  [n] ← A \
+Example: STA 9h
+
+This instruction is added by me and has the effect of storing the numeric value present in the Accumulator at address [n] in Data Memory.
+
+The timing diagram for the STA instruction is as follows:
+
+![ Figure 21 ](/Pictures/Figure21.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 11 ](/Tables/Table11.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+* If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the STA instruction is executed are:
+-	EP = T1
+-	LAR = T1 + STA * T3
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = STA * T3
+-	EA = STA * T4
+-	DM = STA * T4
+-	R/W = STA * T4
+-	NEXT = STA * T5 + STA * T6 + STA * T7 + STA * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the STA instruction will use 4/5=0.8 which is 80% of the time compared to 4/8=0.5 and 50% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = STA * T5
+
+In this variant, if the microprogram reaches one of steps T6 - T8, it will not automatically jump to the next instruction and the time related to steps T6 - T8 is lost.
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
+
+
+
