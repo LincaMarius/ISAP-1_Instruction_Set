@@ -573,4 +573,17 @@ In this variant, if the microprogram reaches one of steps T5 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
+## IN Instruction – INput data from an input port into the accumulator
+Binary form:  1101 pppp \
+Operation:  A ← PORT (p) \
+Example: IN 1h
 
+This instruction is added by me and transfers the numeric value from the Input Port [p] to the Accumulator.
+
+The timing diagram for the IN instruction is as follows:
+
+![ Figure 19 ](/Pictures/Figure19.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 9 ](/Tables/Table9.png)
