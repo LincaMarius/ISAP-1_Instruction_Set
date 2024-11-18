@@ -453,7 +453,7 @@ The timing diagram for the HLT instruction implemented on ISAP-1 Computer is as 
 
 ![ Figure 16 ](/Pictures/Figure16.png)
 
-We can summarize the value of the time control signals shown in this diagram in the following table:
+We can summarize the value of the control signals over time shown in these diagrams in the following tables:
 
 ![ Table 6 ](/Tables/Table6.png)
 
@@ -463,7 +463,7 @@ Signals shown in Black: their activation has no influence on the Data BUS.
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
-The Boolean equations for the signals that are active when the HLT instruction is executed are:
+The Boolean equations for the signals that are active when the HLT instruction is executed for computer SAP-1 are:
 -	EP = T1
 -	LAR = T1
 -	CP = T2
@@ -471,8 +471,24 @@ The Boolean equations for the signals that are active when the HLT instruction i
 -	LI = T3
 -	HLT = HLT * T4 + HLT * T5 + HLT * T6
 
+Semnalul de control HLT este activ începând cu pasul T3 până la ultimul pas T8. În designul original al calculatorului SAP-1 nu se prezintă o diagramă de timp și este descrisă sumar această instrucțiune. 
+
 The control signal HLT is active starting from step T4 until the last step T6. In the original design of the SAP-1 computer, a timing diagram is not shown and this instruction is briefly described.
+
 But from the circuit diagram you can see that gate C34 in the instruction decoder is active when we have the binary code 1111 corresponding to the HLT instruction. So, the control signal HLT is not influenced by the state of the T steps.
+
 This fact can be presented graphically as in figure 8 where we see that for any step T4 – T6 the control signal is high.
+
+The Boolean equations for the signals that are active when the HLT instruction is executed for computer ISAP-1 are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	HLT = HLT * T3 + HLT * T4 + HLT * T5 + HLT * T6 + HLT * T7 + HLT * T8
+
+The control signal HLT is active starting from step T3 until the last step T8.
+
+This fact can be presented graphically as in figure 16 where we see that for any step T3 – T8 the control signal is high.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
