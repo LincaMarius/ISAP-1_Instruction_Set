@@ -817,3 +817,44 @@ Use of the NEXT signal is optional. The simplified version of this instruction c
 In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## JS instruction – Jump if Sign flag is set
+Binary form:  1011 nnnn \
+Operation:  S = 1 ? PC <- nnnn : PC <- PC+1 \
+Example: JS 9h
+
+The program jumps to Address [n] if the Sign flag is set, otherwise it continues with the next instruction
+
+The timing diagram for the JC instruction is as follows:
+
+![ Figure 25 ](/Pictures/Figure25.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 15 ](/Tables/Table15.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the JS instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = JS * T3
+-	LP = (JS * S) * T3
+-	NEXT = JS * T4 + JS * T5 + JS * T6 + JS * T7 + JS * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the JS instruction will use 3/4=0.75 which is 75% of the time compared to 3/8=0.375 and 37.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = JS * T4
+
+In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
