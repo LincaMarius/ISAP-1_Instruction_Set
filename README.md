@@ -1079,3 +1079,46 @@ Use of the NEXT signal is optional. The simplified version of this instruction c
 In this variant, if the microprogram reaches one of steps T6 - T8, it will not automatically jump to the next instruction and the time related to steps T6 - T8 is lost.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## SHL instruction – Left shift Accumulator contents
+Binary form:  1111 0110 \
+Operation:  A << 1 \
+Example: SHL
+
+It's an instruction I added that shifts all bits of the Accumulator's contents one position to the left. The output bit is stored in the Carry Flag. The value zero is inserted into the string. This instruction has no parameter, so it is implemented as an Extended Instruction.
+
+The timing diagram for the SHL instruction is as follows:
+
+![ Figure 31 ](/Pictures/Figure31.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 21 ](/Tables/Table21.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the SHL instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EU = SHL * T3
+-	LAH = SHL * T3
+-	LAL = SHL * T3
+-	F2 = SHL * T3
+-	NEXT = SHL * T4 + SHL * T5 + SHL * T6 + SHL * T7 + SHL * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the SHL instruction will use 3/4=0.75 which is 75% of the time compared to 4/8=0.375 and 37.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = SHL * T4
+
+In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
