@@ -533,4 +533,44 @@ In this variant, if the microprogram reaches one of steps T5 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
+## LIH instruction – Load Immediate value into Higher nibble of accumulator
+Binary form: 0100 nnnn \
+Operation: A[7-4] ← Imm \
+Example: LIH 5h
+
+This instruction is added by me and is useful for loading an immediate numeric value into the Accumulator in its upper half, leaving the lower half unchanged.
+
+The timing diagram for the LIH instruction is as follows:
+
+![ Figure 18 ](/Pictures/Figure18.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 8 ](/Tables/Table8.png)
+
+Signals represented in Red: are active when data is written to the Data BUS \
+Signals represented in Green: are active when reading data from the Data BUS \
+Signals shown in Black: their activation has no influence on the Data BUS
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the LIH instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EI = LIH * T3
+-	LAH = LIH * T3
+-	NEXT = LIH * T4 + LIH * T5 + LIH * T6 + LIH * T7 + LIH * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the LIH instruction will use 3/4=0.75 which is 75% of the time compared to 3/8=0.375 and 37.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = LIH * T4
+
+In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
 
