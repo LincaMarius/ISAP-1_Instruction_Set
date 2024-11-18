@@ -993,3 +993,48 @@ Use of the NEXT signal is optional. The simplified version of this instruction c
 In this variant, if the microprogram reaches one of steps T7 or T8, it will not automatically jump to the next instruction and the time related to steps T7 and T8 is lost.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## PUSH instruction – PUSHes the accumulator onto the stack
+Binary form:  1111 0100 \
+Operation:  [SP-1] <- A \
+Example: PUSH
+
+It is an instruction added by me which after decrementing the Stack Pointer saves in the Stack the numerical value stored in the Accumulator.
+
+The timing diagram for the PUSH instruction is as follows:
+
+![ Figure 29 ](/Pictures/Figure29.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 19 ](/Tables/Table19.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the PUSH instruction is executed are:
+-	EP = T1
+-	LAR = T1 + PUSH * T4
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	DS = PUSH * T3
+-	ES = PUSH * T4
+-	EA = PUSH * T5
+-	SM = PUSH * T5
+-	R/W = PUSH * T5
+-	NEXT = PUSH * T6 + PUSH * T7 + PUSH * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the PUSH instruction will use 5/6=0.84 which is 84% of the time compared to 5/8=0.625 and 62.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = PUSH * T6
+
+In this variant, if the microprogram reaches one of steps T7 or T8, it will not automatically jump to the next instruction and the time related to steps T7 and T8 is lost.
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
+
