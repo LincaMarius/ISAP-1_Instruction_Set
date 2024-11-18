@@ -1037,4 +1037,17 @@ In this variant, if the microprogram reaches one of steps T7 or T8, it will not 
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
+## POP Instruction – Restores the Accumulator from the Stack
+Binary form:  1111 0101 \
+Operation:  A <- [SP]; SP++ \
+Example: POP
+
+It is an instruction added by me that restores the contents of the Accumulator from the Stack. The value from address stored by SP is copied from the Stack into the Accumulator, after which SP is incremented. This statement has no parameter, so it is implemented as an Extended Statement.
+
+The timing diagram for the POP instruction is as follows:
+
+![ Figure 30 ](/Pictures/Figure30.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
 
