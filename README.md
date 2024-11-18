@@ -947,3 +947,49 @@ In this variant, if the microprogram reaches one of steps T6 - T8, it will not a
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
+## NEG instruction – NEGate accumulator register
+Binary form:  1111 0011 \
+Operation:  A <- 0 - A \
+Example: NEG
+
+It is an instruction added by me that performs the negation of the contents of the Accumulator Register by subtracting values stored in the Accumulator from zero, the result is stored in the Accumulator register. It is an instruction that has no parameters, so it is an Extended Instruction.
+
+The timing diagram for the NEG instruction is as follows:
+
+![ Figure 28 ](/Pictures/Figure28.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 18 ](/Tables/Table18.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the NEG instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EA = NEG * T3
+-	LB = NEG * T3
+-	EC = NEG * T4
+-	LAH = NEG * T4
+-	LAL = NEG * T4
+-	EU = NEG * T5
+-	LAH = NEG * T5
+-	LAL = NEG * T5
+-	F0 = NEG * T5
+-	NEXT = NEG * T6 + NEG * T7 + NEG * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the NEG instruction will use 5/6=0.84 which is 84% of the time compared to 5/8=0.625 and 62.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = NEG * T6
+
+In this variant, if the microprogram reaches one of steps T7 or T8, it will not automatically jump to the next instruction and the time related to steps T7 and T8 is lost.
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
