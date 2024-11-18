@@ -1082,7 +1082,7 @@ In this variant, if the microprogram reaches one of steps T6 - T8, it will not a
 
 ## SHL instruction – Left shift Accumulator contents
 Binary form:  1111 0110 \
-Operation:  A << 1 \
+Operation:  A << 1; A[0] <- 0; C <- A[7] \
 Example: SHL
 
 It's an instruction I added that shifts all bits of the Accumulator's contents one position to the left. The output bit is stored in the Carry Flag. The value zero is inserted into the string. This instruction has no parameter, so it is implemented as an Extended Instruction.
@@ -1110,13 +1110,55 @@ The Boolean equations for the signals that are active when the SHL instruction i
 -	EU = SHL * T3
 -	LAH = SHL * T3
 -	LAL = SHL * T3
--	F2 = SHL * T3
+-	F1 = SHL * T3
 -	NEXT = SHL * T4 + SHL * T5 + SHL * T6 + SHL * T7 + SHL * T8
 
 Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the SHL instruction will use 3/4=0.75 which is 75% of the time compared to 4/8=0.375 and 37.5% if we do not use this option.
 
 Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
 - NEXT = SHL * T4
+
+In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## SRA instruction – Arithmetic right shift Accumulator contents
+Binary form:  1111 0111 \
+Operation:  A >> 1; A[6] <- A[7]; C <- A[0]
+Example: SRA
+
+It's an instruction I added that right-shifts all bits of the Accumulator's contents. The output bit is stored in the Carry Flag. The value of the sign, bit 7, is inserted into the string. This instruction has no parameter, so it is implemented as an Extended Instruction.
+
+The timing diagram for the SRA instruction is as follows:
+
+![ Figure 32 ](/Pictures/Figure32.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 22 ](/Tables/Table22.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the SRA instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EU = SRA * T3
+-	LAH = SRA * T3
+-	LAL = SRA * T3
+-	F2 = SRA * T3
+-	NEXT = SRA * T4 + SRA * T5 + SRA * T6 + SRA * T7 + SRA * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the SRA instruction will use 3/4=0.75 which is 75% of the time compared to 4/8=0.375 and 37.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = SRA * T4
 
 In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
 
