@@ -1124,7 +1124,7 @@ In this variant, if the microprogram reaches one of steps T5 - T8, it will not a
 
 ## SRA instruction – Arithmetic right shift Accumulator contents
 Binary form:  1111 0111 \
-Operation:  A >> 1; A[6] <- A[7]; C <- A[0]
+Operation:  A >> 1; A[6] <- A[7]; C <- A[0] \
 Example: SRA
 
 It's an instruction I added that right-shifts all bits of the Accumulator's contents. The output bit is stored in the Carry Flag. The value of the sign, bit 7, is inserted into the string. This instruction has no parameter, so it is implemented as an Extended Instruction.
@@ -1159,6 +1159,49 @@ Using the NEXT signal moves to the next instruction without losing micro-steps. 
 
 Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
 - NEXT = SRA * T4
+
+In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## SRL instruction – Logical right shift Accumulator contents
+Binary form:  1111 1000 \
+Operation:  A >> 1; A[7] <- 0; C <- A[0]
+Example: SRL
+
+It's an instruction I added that right-shifts all bits of the Accumulator's contents. The output bit is stored in the Carry Flag. The value zero is inserted into the string. This instruction has no parameter, so it is implemented as an Extended Instruction.
+
+The timing diagram for the SRL instruction is as follows:
+
+![ Figure 33 ](/Pictures/Figure33.png)
+
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 23 ](/Tables/Table23.png)
+
+Signals represented in Red: are active when data is written to the Data BUS. \
+Signals represented in Green: are active when reading data from the Data BUS. \
+Signals shown in Black: their activation has no influence on the Data BUS.
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the SRL instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	PM = T2
+-	LI = T2
+-	CP = T2
+-	EU = SRL * T3
+-	LAH = SRL * T3
+-	LAL = SRL * T3
+-	F2 = SRL * T3
+-	F1 = SRL * T3
+-	NEXT = SRL * T4 + SRL * T5 + SRL * T6 + SRL * T7 + SRL * T8
+
+Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the SRL instruction will use 3/4=0.75 which is 75% of the time compared to 4/8=0.375 and 37.5% if we do not use this option.
+
+Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
+- NEXT = SRL * T4
 
 In this variant, if the microprogram reaches one of steps T5 - T8, it will not automatically jump to the next instruction and the time related to steps T5 - T8 is lost.
 
