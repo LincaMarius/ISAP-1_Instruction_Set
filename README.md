@@ -101,33 +101,18 @@ If we drop one more instruction with a parameter, we can add another 16 instruct
 - 14 instructions with parameter
 - 32 instructions without parameter
 
-## NOP instruction – No OPeration
+### NOP instruction – No OPeration
 Binary form:  **** **** \
 Operation:  no operation \
 Example: NOP
 
 The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction.
 
-No action is performed. This instruction can be used in programs to delay the execution of an action while waiting for a response from slow peripherals.
-
-The binary form for the extended NOP instruction will be: 1111 0000 \
-This instruction has no parameter so it will be implemented as an Extended Instruction.
-
 The original timing diagram for the NOP instruction of the SAP-1 computer is:
 
-![ Figure 5 ](/Pictures/Figure5.png)
+![ Figure 3 ](/Pictures/Figure3.png)
 
-All instructions of the SAP-1 computer are executed in 6 steps noted in the diagram and wiring diagram T1 - T6. The first 3 steps are the Fetch portion and the last 3 are the Execution portion of the instruction. The Fetch part of the statement is identical for all statements. The Execution part is specific to each individual instruction.
-
-The timing diagram for the NOP instruction of the ISAP-1 computer is:
-
-![ Figure 6 ](/Pictures/Figure6.png)
-
-All instructions of the ISAP-1 computer are executed in 8 steps or more (if necessary I will increase the number of steps) noted in the diagram and in the wiring diagram T1 – T8. The first 2 steps are the Fetch portion and the last 6 are the Execution portion of the instruction.
-
-The Fetch part of the statement is identical for all statements. The Fetch part of the instructions executed by the SAP-1 computer had 3 steps, but the T2 step was only used to increment the Program Counter. Since the Program Counter is not used in step T3, steps T2 and T3 can be combined. So the current instruction will be loaded from memory and the Program Counter will be incremented in the same step labeled T2.
-
-If this approach was used by the authors, an increase in the instruction execution speed was achieved by 1/6 = 0.167, so 16.7%.
+All instructions of the SAP-1 computer are executed in 6 steps noted in the diagram and wiring diagram T1 - T6. The first 3 steps are the Fetch portion and the last 3 are the Execution portion of the instruction. The Fetch part of the instruction is identical for all instructions. The Execution part is specific to each individual instruction.
 
 ALL UNIMPLEMENTED INSTRUCTIONS WILL BE TREATED BY THE SAP-1 CPU AS A NOP INSTRUCTION
 
@@ -154,29 +139,6 @@ Since steps T1, T2 and T3 are present and identical in any instruction we can sa
 -	CP = T2
 -	PM = T3
 -	LI = T3
-
-The Boolean equations for the signals that are active when the NOP instruction is executed for computer ISAP-1 are:
--	EP = NOP * T1
--	LAR = NOP * T1
--	PM = NOP * T2
--	LI = NOP * T2
--	CP = NOP * T2
--	NEXT = NOP * T3 + NOP * T4 + NOP * T5 + NOP * T6 + NOP * T7 + NOP * T8
-
-Since steps T1, T2 and T3 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
--	EP = T1
--	LAR = T1
--	CP = T2
--	PM = T3
--	LI = T3
--	NEXT = NOP * T3 + NOP * T4 + NOP * T5 + NOP * T6 + NOP * T7 + NOP * T8
-
-Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the NOP instruction will use 2/3=0.67 which is 67% of the time compared to 2/8=0.25 and 25% if we do not use this option.
-
-Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
-- NEXT = NOP * T3
-
-In this variant, if the microprogram reaches one of the steps T4 - T8, it will not automatically jump to the next instruction and the time related to steps T4 - T8 is lost. This variant is useful because it reduces the number of logic gates used in the implementation of the Control Unit.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
