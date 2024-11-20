@@ -18,6 +18,8 @@ https://github.com/LincaMarius/ISAP-1_Computer_Project
 
 where I optimized the SAP-1 calculator step by step to create my own version called ISAP-1 (Improved SAP-1).
 
+## ISAP-1 version 1
+
 The original structure of the SAP-1 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
@@ -25,11 +27,6 @@ The original structure of the SAP-1 computer is:
 The original block diagram of the Central Processing Unit of the SAP-1 computer is:
 
 ![ Figure 2 ](/Pictures/Figure2.png)
-
-The final block diagram of the Central Processing Unit of the ISAP-1 computer is:
-
-![ Figure 4 ](/Pictures/Figure4.png)
-
 
 ### The original format of the SAP-1 computer instructions is:
 
@@ -75,7 +72,7 @@ These codes are treated by the SAP-1 computer as NOP instructions, the previous 
 | OUT      | 1110   | Load Accumulator data into Output Register |
 | HLT      | 1111   | Stop processing                            |
 
-This is the Complete Instructions Setfor the SAP-1 computer.
+*This is the Complete Instructions Setfor the SAP-1 computer.*
 
 So, we have the instructions coded on the first 4 bits, leaving the next 4 bits to code the address of the operand in the case of the SAP-1 computer.
 
