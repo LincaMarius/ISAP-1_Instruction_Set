@@ -219,11 +219,7 @@ Subtracts the numeric value at address [n] from the numeric value stored in the 
 
 The timing diagram for the SUB instruction implemented on SAP-1 Computer is as follows:
 
-![ Figure 11 ](/Pictures/Figure11.png)
-
-The timing diagram for the SUB instruction implemented on ISAP-1 Computer is as follows:
-
-![ Figure 12 ](/Pictures/Figure12.png)
+![ Figure 6 ](/Pictures/Figure6.png)
 
 We can summarize the value of the control signals over time shown in these diagrams in the following tables:
 
@@ -246,28 +242,6 @@ The Boolean equations for the signals that are active when the SUB instruction i
 -	EU = SUB * T6
 -	LA = SUB * T6
 -	SU = SUB * T6
-
-The Boolean equations for the signals that are active when the SUB instruction is executed for computer ISAP-1 are:
--	EP = T1
--	LAR = T1 + SUB * T3
--	PM = T2
--	LI = T2
--	CP = T2
--	EI = SUB * T3
--	DM = SUB * T4
--	LB = SUB * T4
--	EU = SUB * T5
--	LAH = SUB * T5
--	LAL = SUB * T5
--	F0 = SUB * T5
--	NEXT = SUB * T6 + SUB * T7 + SUB * T8
-
-Using the NEXT signal moves to the next instruction without losing micro-steps. This variable microcode length system for the SUB instruction will use 5/6=0.84 which is 84% of the time compared to 5/8=0.625 and 62.5% if we do not use this option.
-
-Use of the NEXT signal is optional. The simplified version of this instruction can also be used:
-- NEXT = SUB * T6
-
-In this variant, if the microprogram reaches one of the steps T6 or T8, it will not automatically jump to the next instruction and the time related to steps T7 and T8 is lost. This variant is useful because it reduces the number of logic gates used in the implementation of the Control Unit.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
