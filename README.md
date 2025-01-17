@@ -99,7 +99,7 @@ We can summarize the value of the control signals over time shown in these diagr
 
 Signals represented in Red: *are active when data is written to the Data BUS* \
 Signals represented in Green: *are active when reading data from the Data BUS* \
-Signals shown in Black: their *activation has no influence on the Data BUS*
+Signals shown in Black: *their activation has no influence on the Data BUS*
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
@@ -134,9 +134,9 @@ We can summarize the value of the control signals over time shown in these diagr
 
 ![ Table 2 ](/Tables/Table2.png)
 
-Signals represented in Red: are active when data is written to the Data BUS. \
-Signals represented in Green: are active when reading data from the Data BUS. \
-Signals shown in Black: their activation has no influence on the Data BUS. 
+Signals represented in Red: *are active when data is written to the Data BUS* \
+Signals represented in Green: *are active when reading data from the Data BUS* \
+Signals shown in Black: *their activation has no influence on the Data BUS*
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
@@ -166,9 +166,9 @@ We can summarize the value of the control signals over time shown in these diagr
 
 ![ Table 3 ](/Tables/Table3.png)
 
-Signals represented in Red: are active when data is written to the Data BUS. \
-Signals represented in Green: are active when reading data from the Data BUS. \
-Signals shown in Black: their activation has no influence on the Data BUS.
+Signals represented in Red: *are active when data is written to the Data BUS* \
+Signals represented in Green: *are active when reading data from the Data BUS* \
+Signals shown in Black: *their activation has no influence on the Data BUS*
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
@@ -190,7 +190,7 @@ Binary form:  0010 nnnn \
 Operation:  A ← A – [n] \
 Example: SUB 5h
 
-Subtracts the numeric value at address [n] from the numeric value stored in the Acumulator and stores the result in the Accumulator.
+Subtracts the numeric value at Address [n] from the numeric value stored in the Acumulator and stores the result in the Accumulator.
 
 The timing diagram for the SUB instruction implemented on SAP-1 Computer is as follows:
 
@@ -200,9 +200,9 @@ We can summarize the value of the control signals over time shown in these diagr
 
 ![ Table 4 ](/Tables/Table4.png)
 
-Signals represented in Red: are active when data is written to the Data BUS. \
-Signals represented in Green: are active when reading data from the Data BUS. \
-Signals shown in Black: their activation has no influence on the Data BUS.
+Signals represented in Red: *are active when data is written to the Data BUS* \
+Signals represented in Green: *are active when reading data from the Data BUS* \
+Signals shown in Black: *their activation has no influence on the Data BUS*
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
@@ -235,9 +235,9 @@ We can summarize the value of the control signals over time shown in these diagr
 
 ![ Table 5 ](/Tables/Table5.png)
 
-Signals represented in Red: are active when data is written to the Data BUS. \
-Signals represented in Green: are active when reading data from the Data BUS. \
-Signals shown in Black: their activation has no influence on the Data BUS.
+Signals represented in Red: *are active when data is written to the Data BUS* \
+Signals represented in Green: *are active when reading data from the Data BUS* \
+Signals shown in Black: *their activation has no influence on the Data BUS*
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
@@ -267,9 +267,9 @@ We can summarize the value of the control signals over time shown in these diagr
 
 ![ Table 6 ](/Tables/Table6.png)
 
-Signals represented in Red: are active when data is written to the Data BUS. \
-Signals represented in Green: are active when reading data from the Data BUS. \
-Signals shown in Black: their activation has no influence on the Data BUS.
+Signals represented in Red: *are active when data is written to the Data BUS* \
+Signals represented in Green: *are active when reading data from the Data BUS* \
+Signals shown in Black: *their activation has no influence on the Data BUS*
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
