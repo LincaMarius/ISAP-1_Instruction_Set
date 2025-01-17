@@ -5,7 +5,7 @@ This is the process of optimizing the functionality of the SAP-1 computer at the
 
 By: Lincă Marius Gheorghe.
 
-Pitești, Argeș, România, Europe.
+Pitești, Argeș, Romania, Europe.
 
 https://github.com/LincaMarius
 
@@ -76,31 +76,6 @@ These codes are treated by the SAP-1 computer as NOP instructions, the previous 
 
 So, we have the instructions coded on the first 4 bits, leaving the next 4 bits to code the address of the operand in the case of the SAP-1 computer.
 
-This means that a maximum of 2 ^ 4 = 16 memory locations can be accessed
-
-How can we increase this number?
-
-We will reserve an instruction code to indicate a special instruction, a prefix that tells the instruction decoder that we have a special instruction. I named this as a prefix for Extended Instructions.
-
-I chose the prefix as 1111 in binary or 0xF in hexadecimal.
-
-This instruction takes the extended instruction type as a parameter. \
-So, we will have 2 ^ 4 = 16 extended instructions. \
-These instructions have no parameters.
-
-The instruction format for the ISAP-1 computer is the same. But I'm going to add the extended instructions, which have the following form:
-
-| extended instruction prefix 4 bits (0xF) | extended instruction code 4 bits |
-|------------------------------------------|----------------------------------|
-
-The instruction set of the ISAP-1 computer has 31 instructions:
-- 15 instructions with parameter
-- 16 instructions without parameter
-
-If we drop one more instruction with a parameter, we can add another 16 instructions without a parameter, and we will have a total of 46 instructions:
-- 14 instructions with parameter
-- 32 instructions without parameter
-
 ### NOP instruction – No OPeration
 Binary form:  **** **** \
 Operation:  no operation \
@@ -122,9 +97,9 @@ We can summarize the value of the control signals over time shown in these diagr
 
 ![ Table 1 ](/Tables/Table1.png)
 
-Signals represented in Red: are active when data is written to the Data BUS \
-Signals represented in Green: are active when reading data from the Data BUS \
-Signals shown in Black: their activation has no influence on the Data BUS
+Signals represented in Red: *are active when data is written to the Data BUS* \
+Signals represented in Green: *are active when reading data from the Data BUS* \
+Signals shown in Black: their *activation has no influence on the Data BUS*
 
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
