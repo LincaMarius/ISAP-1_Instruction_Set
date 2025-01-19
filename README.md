@@ -438,3 +438,36 @@ The Boolean equations for the signals that are active when the SUB instruction i
 -	SU = SUB * T6
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## OUT instruction – OUTput data from the accumulator
+Binary form:  1110 **** \
+Operation:  PORT (*) ← A \
+Example: OUT *
+
+Transfers the numeric value stored in the Accumulator to Output Port. This instruction has no parameter.
+
+The new Timing Diagram for the OUT instruction of the ISAP-1 Model A Version 1.1 computer is:
+
+![ Figure 11 ](/Pictures/Figure11.png)
+
+We can summarize the value of the control signals over time shown in these diagrams in the following table:
+
+![ Table 9 ](/Tables/Table9.png)
+
+Signals represented in Red: *are active when data is written to the Data BUS* \
+Signals represented in Green: *are active when reading data from the Data BUS* \
+Signals shown in Black: *their activation has no influence on the Data BUS*
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the OUT instruction is executed for computer ISAP-1 Model A Version 1.1 are:
+-	EP = T1
+-	LAR = T1
+-	CP = T2
+-	PM = T3
+-	LI = T3
+-	EA = OUT * T4
+-	I/O = OUT * T4
+-	Next = OUT * T5
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
