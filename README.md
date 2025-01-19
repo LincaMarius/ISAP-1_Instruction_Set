@@ -18,7 +18,7 @@ https://github.com/LincaMarius/ISAP-1_Computer_Project
 
 where I optimized the SAP-1 calculator step by step to create my own version called ISAP-1 (Improved SAP-1).
 
-## ISAP-1 version 1
+## ISAP-1 Model A Version 1
 
 The original structure of the SAP-1 computer is:
 
@@ -288,3 +288,20 @@ But from the circuit diagram you can see that gate C34 in the instruction decode
 This fact can be presented graphically as in figure 8 where we see that for any step T4 – T6 the control signal is high.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## ISAP-1 Model A Version 1.1
+In Version 1.1, an improvement is made to the ISAP-1 computer by implementing the Variable Machine Cycle.
+
+The Instruction Set remains unchanged but the Timing Diagrams for all instructions are modified and by implication the Boolean Equations and Tables are modified.
+
+### NOP instruction – No operation
+Binary form:  **** **** \
+Operation:  no operation \
+Example: NOP
+
+The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction.
+
+We do not have the NOP instruction on the SAP-1 computer but we need to study it because all 11 unimplemented instruction codes will be treated by the Control Block and implicitly by the SAP-1 computer as the NOP instruction.
+
+The new Timing Diagram for the NOP instruction of the ISAP-1 computer is:
+
