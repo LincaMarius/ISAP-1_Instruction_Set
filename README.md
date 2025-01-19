@@ -352,3 +352,55 @@ We can summarize the value of the control signals over time shown in these diagr
 
 ![ Table 8 ](/Tables/Table8.png)
 
+Signals represented in Red: *are active when data is written to the Data BUS* \
+Signals represented in Green: *are active when reading data from the Data BUS* \
+Signals shown in Black: *their activation has no influence on the Data BUS*
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the LDA instruction is executed for computer ISAP-1 Model A Version 1.1 are:
+-	EP = T1
+-	LAR = T1 + LDA * T4
+-	CP = T2
+-	PM = T3 + LDA * T5
+-	LI = T3
+-	EI = LDA * T4
+-	LA = LDA * T5
+-	Next = NOP * T6
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
+### ADD instruction – ADD to accumulator
+Binary form:  0001 nnnn \
+Operation:  A ← A + [n] \
+Example: ADD 8h
+
+Adds the numeric value at Address [n] with the numeric value stored in the Accumulator and stores the result in the Accumulator.
+
+The timing diagram for the ADD instruction implemented on the ISAP-1 Model A Version 1.1 Computer is unchanged compared to version 1:
+
+![ Figure 5 ](/Pictures/Figure5.png)
+
+We can summarize the value of the control signals over time shown in these diagrams in the following tables:
+
+![ Table 3 ](/Tables/Table3.png)
+
+Signals represented in Red: *are active when data is written to the Data BUS* \
+Signals represented in Green: *are active when reading data from the Data BUS* \
+Signals shown in Black: *their activation has no influence on the Data BUS*
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the ADD instruction is executed for computer SAP-1 are:
+-	EP = T1
+-	LAR = T1 + ADD * T4
+-	CP = T2
+-	PM = T3 + ADD * T5
+-	LI = T3
+-	EI = ADD * T4
+-	LB = ADD * T5
+-	EU = ADD * T6
+-	LA = ADD * T6
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
