@@ -305,3 +305,7 @@ We do not have the NOP instruction on the SAP-1 computer but we need to study it
 
 The new Timing Diagram for the NOP instruction of the ISAP-1 computer is:
 
+All instructions of the ISAP-1 computer are executed in a maximum of 6 steps noted in the wiring diagram T1 - T6 . The first 3 steps are the Fetch portion and the last 3 are the Execution portion of the instruction. The Fetch part of the instruction is identical for all instructions. The Execution part is specific to each instruction and now has variable execution time.
+
+ALL UNIMPLEMENTED INSTRUCTIONS WILL BE TREATED BY THE ISAP-1 CPU AS A NOP INSTRUCTION!!!
+
