@@ -309,3 +309,39 @@ All instructions of the ISAP-1 computer are executed in a maximum of 6 steps not
 
 ALL UNIMPLEMENTED INSTRUCTIONS WILL BE TREATED BY THE ISAP-1 CPU AS A NOP INSTRUCTION!!!
 
+![ Table 7 ](/Tables/Table7.png)
+
+Signals represented in Red: *are active when data is written to the Data BUS* \
+Signals represented in Green: *are active when reading data from the Data BUS* \
+Signals shown in Black: *their activation has no influence on the Data BUS*
+
+*If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
+
+The Boolean equations for the signals that are active when the NOP instruction is executed for computer ISAP-1 Model A Version 1.1 are:
+-	EP = NOP * T1
+-	LAR = NOP * T1
+-	CP = NOP * T2
+-	PM = NOP * T3
+-	LI = NOP * T3
+-	Next = NOP * T4
+
+Since steps T1, T2 and T3 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
+-	EP = T1
+-	LAR = T1
+-	CP = T2
+-	PM = T3
+-	LI = T3
+-	Next = NOP * T4
+
+*If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## LDA instruction – LoaD the Accumulator
+Binary form:  0000 nnnn \
+Operation:  A ← [n] \
+Example: LDA 9h
+
+Loads the numeric value from Address [n] into the Accumulator.
+
+The new Timing Diagram for the LDA instruction of the ISAP-1 computer is as follows:
+
+![ Figure 10 ](/Pictures/Figure10.png)
