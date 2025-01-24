@@ -18,7 +18,7 @@ https://github.com/LincaMarius/ISAP-1_Computer_Project
 
 where I optimized the SAP-1 calculator step by step to create my own version called ISAP-1 (Improved SAP-1).
 
-## ISAP-1 Model A Version 1
+## ISAP-1 Computer Instruction Set Revision 1
 
 The original structure of the SAP-1 computer is:
 
@@ -289,8 +289,8 @@ This fact can be presented graphically as in figure 8 where we see that for any 
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
-## ISAP-1 Model A Version 1.1
-In Version 1.1, an improvement is made to the ISAP-1 computer by implementing the Variable Machine Cycle.
+## ISAP-1 Computer Instruction Set Revision 2
+Revision 2 of the Instruction Set provides an improvement to the ISAP-1 computer by implementing the Variable Machine Cycle.
 
 The Instruction Set remains unchanged but the Timing Diagrams for all instructions are modified and by implication the Boolean Equations and Tables are modified.
 
@@ -301,7 +301,7 @@ Example: NOP
 
 The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction.
 
-We do not have the NOP instruction on the SAP-1 computer but we need to study it because all 11 unimplemented instruction codes will be treated by the Control Block and implicitly by the SAP-1 computer as the NOP instruction.
+We do not have the NOP instruction on the SAP-1 Computer but we need to study it because all 11 unimplemented instruction codes will be treated by the Control Block and implicitly by the SAP-1 Computer as the NOP instruction.
 
 The new Timing Diagram for the NOP instruction of the ISAP-1 computer is:
 
@@ -366,7 +366,7 @@ The Boolean equations for the signals that are active when the LDA instruction i
 -	LI = T3
 -	EI = LDA * T4
 -	LA = LDA * T5
--	Next = NOP * T6
+-	Next = LDA * T6
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
@@ -377,7 +377,7 @@ Example: ADD 8h
 
 Adds the numeric value at Address [n] with the numeric value stored in the Accumulator and stores the result in the Accumulator.
 
-The timing diagram for the ADD instruction implemented on the ISAP-1 Model A Version 1.1 Computer is unchanged compared to version 1:
+The timing diagram for the ADD instruction in Revision 2 is unchanged from that in Revision 1 of the Instruction Set.
 
 ![ Figure 5 ](/Pictures/Figure5.png)
 
@@ -411,7 +411,7 @@ Example: SUB 5h
 
 Subtracts the numeric value at Address [n] from the numeric value stored in the Accumulator and stores the result in the Accumulator.
 
-The timing diagram for the SUB instruction implemented on the ISAP-1 Model A Version 1.1 Computer is unchanged compared to version 1:
+The timing diagram for the SUB instruction in Revision 2 is unchanged from that in Revision 1 of the Instruction Set.
 
 ![ Figure 6 ](/Pictures/Figure6.png)
 
@@ -446,7 +446,7 @@ Example: OUT *
 
 Transfers the numeric value stored in the Accumulator to Output Port. This instruction has no parameter.
 
-The new Timing Diagram for the OUT instruction of the ISAP-1 Model A Version 1.1 computer is:
+The new Timing Diagram for the OUT instruction of the ISAP-1 Computer for Instruction Set Revision 2 is:
 
 ![ Figure 11 ](/Pictures/Figure11.png)
 
@@ -479,7 +479,7 @@ Example: HLT
 
 Stops further execution of computer instructions.
 
-The timing diagram for the HLT instruction implemented on the ISAP-1 Model A Version 1.1 Computer is unchanged compared to version 1:
+The timing diagram for the HLT instruction in Revision 2 is unchanged from that in Revision 1 of the Instruction Set.
 
 ![ Figure 8 ](/Pictures/Figure8.png)
 
@@ -508,4 +508,39 @@ But from the circuit diagram you can see that gate C34 in the instruction decode
 This fact can be presented graphically as in figure 8 where we see that for any step T4 – T6 the control signal is high.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
+
+## ISAP-1 Model A Version 1.2
+In this version I will implement the Unconditional Jump instruction - JMP.
+
+The JMP instruction will have the code 0x03 and will have as a parameter the memory address where the jump is made.
+
+### The instruction set of the ISAP-1 computer after implementing the new JMP instruction is:
+
+| Mnemonic | Opcode | Operation                                  |
+|----------|--------|--------------------------------------------|
+| LDA      | 0000   | Load RAM data into Accumulator             |
+| ADD      | 0001   | Add RAM data to Accumulator                |
+| SUB      | 0010   | Substract RAM data from accumulator        |
+| NOP      | 0011   | No Operation                               |
+| NOP      | 0100   | No Operation                               |
+| NOP      | 0101   | No Operation                               |
+| NOP      | 0110   | No Operation                               |
+| NOP      | 0111   | No Operation                               |
+| NOP      | 1000   | No Operation                               |
+| NOP      | 1001   | No Operation                               |
+| NOP      | 1010   | No Operation                               |
+| NOP      | 1011   | No Operation                               |
+| JMP      | 1100   | Unconditional Jump to RAM Address N        |
+| NOP      | 1101   | No Operation                               |
+| OUT      | 1110   | Load Accumulator data into Output Register |
+| HLT      | 1111   | Stop processing                            |
+
+## JMP instruction – unconditional JuMP to address n
+Binary form:  1100 nnnn \
+Operation:  PC ← Imm \
+Example: JMP 7h
+
+This instruction is added by me and performs an unconditional jump to Address n.
+
+The timing diagram for the new JMP instruction on the ISAP-1 computer is as follows:
 
