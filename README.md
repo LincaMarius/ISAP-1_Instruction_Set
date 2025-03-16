@@ -44,11 +44,11 @@ Thus, we can have a maximum of 2 ^ 4 = 16 instructions.
 |----------|--------|--------------------------------------------|
 | LDA      | 0000   | Load RAM data into Accumulator             |
 | ADD      | 0001   | Add RAM data to Accumulator                |
-| SUB      | 0010   | Substract RAM data from accumulator        |
+| SUB      | 0010   | Substract RAM data from Accumulator        |
 | OUT      | 1110   | Load Accumulator data into Output Register |
 | HLT      | 1111   | Stop processing                            |
 
-We can notice that the instructions 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
+We can notice that the instructions: 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
 
 These codes are treated by the SAP-1 computer as NOP instructions, the previous table can be completed as follows:
 
@@ -71,7 +71,7 @@ These codes are treated by the SAP-1 computer as NOP instructions, the previous 
 | OUT      | 1110   | Load Accumulator data into Output Register |
 | HLT      | 1111   | Stop processing                            |
 
-*This is the Complete Instructions Setfor the SAP-1 computer.*
+*This is the Complete Instruction Set for the SAP-1 computer and the ISAP-1 computer*
 
 So, we have the instructions coded on the first 4 bits, leaving the next 4 bits to code the address of the operand in the case of the SAP-1 computer.
 
@@ -88,7 +88,7 @@ The original timing diagram for the NOP instruction of the SAP-1 computer is:
 
 ![ Figure 3 ](/Pictures/Figure3.png)
 
-All instructions of the SAP-1 computer are executed in 6 steps noted in the diagram and wiring diagram T1 - T6. The first 3 steps are the Fetch portion and the last 3 are the Execution portion of the instruction. The Fetch part of the instruction is identical for all instructions. The Execution part is specific to each individual instruction.
+All instructions of the SAP-1 computer are executed in 6 steps marked in the diagram and in the electrical diagram T1 - T6. The first 3 steps are the Fetch portion and the last 3 are the Execution portion of the instruction. The Fetch portion of the instruction is identical for all instructions. The Execution portion is specific to each individual instruction.
 
 ALL UNIMPLEMENTED INSTRUCTIONS WILL BE TREATED BY THE SAP-1 CPU AS A NOP INSTRUCTION
 
@@ -109,7 +109,7 @@ The Boolean equations for the signals that are active when the NOP instruction i
 -	PM = NOP * T3
 -	LI = NOP * T3
 
-Since steps T1, T2 and T3 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
+Since steps T1, T2 and T3 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the equations as follows:
 -	EP = T1
 -	LAR = T1
 -	CP = T2
