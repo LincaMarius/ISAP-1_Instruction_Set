@@ -19,11 +19,11 @@ https://github.com/LincaMarius/ISAP-1_Computer_Project
 where I optimized the SAP-1 calculator step by step to create my own version called ISAP-1 (Improved SAP-1).
 
 ## ISAP-1 Computer Instruction Set Revision 1
-The structure of the ISAP-1 computer is as follows:
+The original structure of the SAP-1 computer is identical to the structure of the ISAP-1 computer:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
 
-The original block diagram of the Central Processing Unit of the SAP-1 computer is:
+The original Block Diagram of the Central Processing Unit of the SAP-1 computer is identical to that of the ISAP-1 computer:
 
 ![ Figure 2 ](/Pictures/Figure2.png)
 
