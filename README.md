@@ -3,7 +3,7 @@ The improved version of the SAP-1 computer.
 
 This is the process of optimizing the functionality of the SAP-1 computer at the Instruction Set level, which I went through, presented step by step.
 
-By: Lincă Marius Gheorghe.
+By: Lincă Marius Gheorghe,
 
 Pitești, Argeș, Romania, Europe.
 
@@ -19,8 +19,7 @@ https://github.com/LincaMarius/ISAP-1_Computer_Project
 where I optimized the SAP-1 calculator step by step to create my own version called ISAP-1 (Improved SAP-1).
 
 ## ISAP-1 Computer Instruction Set Revision 1
-
-The original structure of the SAP-1 computer is:
+The structure of the ISAP-1 computer is as follows:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
 
