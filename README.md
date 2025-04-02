@@ -27,7 +27,8 @@ The original Block Diagram of the Central Processing Unit of the SAP-1 computer 
 
 ![ Figure 2 ](/Pictures/Figure2.png)
 
-### The original format of the SAP-1 computer instructions is:
+### Instruction format
+The original format of the SAP-1 computer instructions is:
 
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
@@ -38,17 +39,18 @@ So, any instruction is encoded on 4 bits.
 
 Thus, we can have a maximum of 2 ^ 4 = 16 instructions.
 
-### The original instruction set of the SAP-1 computer is:
+### The Instruction Set of the SAP-1 computer
+The original instruction set of the SAP-1 computer is:
 
-| Mnemonic | Opcode | Operation                                  |
-|----------|--------|--------------------------------------------|
-| LDA      | 0000   | Load RAM data into Accumulator             |
-| ADD      | 0001   | Add RAM data to Accumulator                |
-| SUB      | 0010   | Substract RAM data from Accumulator        |
-| OUT      | 1110   | Load Accumulator data into Output Register |
-| HLT      | 1111   | Stop processing                            |
+| Mnemonic  | Opcode | Operation                                  |
+|-----------|--------|--------------------------------------------|
+| LDA n     | 0000   | Load RAM data into Accumulator             |
+| ADD n     | 0001   | Add RAM data to Accumulator                |
+| SUB n     | 0010   | Substract RAM data from Accumulator        |
+| OUT *     | 1110   | Load Accumulator data into Output Register |
+| HLT *     | 1111   | Stop processing                            |
 
-We can notice that the instructions: 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
+We can see that the following opcodes: 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So, we can add 11 more new instructions.
 
 These codes are treated by the SAP-1 computer as NOP instructions, the previous table can be completed as follows:
 
@@ -71,16 +73,16 @@ These codes are treated by the SAP-1 computer as NOP instructions, the previous 
 | OUT      | 1110   | Load Accumulator data into Output Register |
 | HLT      | 1111   | Stop processing                            |
 
-*This is the Complete Instruction Set for the SAP-1 computer and the ISAP-1 computer*
+*This is the complete Instruction Set for the SAP-1 computer and for the ISAP-1 computer version 1.0*
 
-So, we have the instructions coded on the first 4 bits, leaving the next 4 bits to code the address of the operand in the case of the SAP-1 computer.
+So we have the instructions encoded in the first 4 bits, leaving the next 4 bits for encoding the instruction parameter which represents a memory address where the operand is located in the case of the SAP-1 computer.
 
 ### NOP instruction – No OPeration
 Binary form:  **** **** \
 Operation:  no operation \
 Example: NOP
 
-The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction.
+The NOP instruction has only the Fetch portion (present in all instruction), but has nothing in the execution portion of the instruction.
 
 We do not have the NOP instruction on the SAP-1 computer but we need to study it because all 11 unimplemented instruction codes will be treated by the Control Block and implicitly by the SAP-1 computer as the NOP instruction.
 
@@ -195,7 +197,7 @@ The timing diagram for the SUB instruction implemented on SAP-1 Computer is as f
 
 ![ Figure 6 ](/Pictures/Figure6.png)
 
-We can summarize the value of the control signals over time shown in these diagrams in the following tables:
+We can summarize the value of the control signals over time presented in this diagram in the following table:
 
 ![ Table 4 ](/Tables/Table4.png)
 
@@ -226,11 +228,13 @@ Example: OUT *
 
 Transfers the numeric value stored in the Accumulator to Output Port. This instruction has no parameter.
 
+Since in the case of the SAP-1 computer we only have a single output port, it is activated using any value for the instruction parameter.
+
 The timing diagram for the OUT instruction implemented on SAP-1 Computer is as follows:
 
 ![ Figure 7 ](/Pictures/Figure7.png)
 
-We can summarize the value of the control signals over time shown in these diagrams in the following tables:
+We can summarize the value of the control signals over time presented in this diagram in the following table:
 
 ![ Table 5 ](/Tables/Table5.png)
 
@@ -262,7 +266,7 @@ The timing diagram for the HLT instruction implemented on SAP-1 Computer is as f
 
 ![ Figure 8 ](/Pictures/Figure8.png)
 
-We can summarize the value of the control signals over time shown in these diagrams in the following tables:
+We can summarize the value of the control signals over time presented in this diagram in the following table:
 
 ![ Table 6 ](/Tables/Table6.png)
 
