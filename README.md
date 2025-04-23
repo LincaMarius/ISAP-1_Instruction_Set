@@ -84,7 +84,7 @@ Example: NOP
 
 The NOP instruction has only the Fetch portion (present in all instruction), but has nothing in the execution portion of the instruction.
 
-We do not have the NOP instruction on the SAP-1 computer but we need to study it because all 11 unimplemented instruction codes will be treated by the Control Block and implicitly by the SAP-1 computer as the NOP instruction.
+We do not have the NOP instruction on the SAP-1 computer but we need to study it because all 11 unimplemented instruction codes will be treated by the Control Unit and implicitly by the SAP-1 computer as the NOP instruction.
 
 The original timing diagram for the NOP instruction of the SAP-1 computer is:
 
@@ -94,7 +94,7 @@ All instructions of the SAP-1 computer are executed in 6 steps marked in the dia
 
 ALL UNIMPLEMENTED INSTRUCTIONS WILL BE TREATED BY THE SAP-1 CPU AS A NOP INSTRUCTION
 
-We can summarize the value of the control signals over time shown in these diagrams in the following tables:
+We can summarize the value of the control signals over time presented in these diagrams in the following table:
 
 ![ Table 1 ](/Tables/Table1.png)
 
@@ -131,7 +131,7 @@ The timing diagram for the LDA instruction implemented on SAP-1 Computer is as f
 
 ![ Figure 4 ](/Pictures/Figure4.png)
 
-We can summarize the value of the control signals over time shown in these diagrams in the following tables:
+We can summarize the value of the control signals over time presented in these diagrams in the following table:
 
 ![ Table 2 ](/Tables/Table2.png)
 
@@ -163,7 +163,7 @@ The timing diagram for the ADD instruction implemented on SAP-1 Computer is as f
 
 ![ Figure 5 ](/Pictures/Figure5.png)
 
-We can summarize the value of the control signals over time shown in these diagrams in the following tables:
+We can summarize the value of the control signals over time shown in these diagrams in the following table:
 
 ![ Table 3 ](/Tables/Table3.png)
 
@@ -289,6 +289,8 @@ The control signal HLT is active starting from step T4 until the last step T6. I
 But from the circuit diagram you can see that gate C34 in the instruction decoder is active when we have the binary code 1111 corresponding to the HLT instruction. So, the control signal HLT is not influenced by the state of the T steps.
 
 This fact can be presented graphically as in figure 8 where we see that for any step T4 – T6 the control signal is high.
+
+Because the HALT instruction blocks the clock signal and the computer can no longer function, exiting this state can only be done by resetting the computer.
 
 *If we implement the Control Block using Combinational Logic we will use these equations.*
 
