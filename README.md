@@ -87,27 +87,6 @@ We can summarize the value of the control signals over time presented in these d
 
 ![ Table 1 ](/Tables/Table1.png)
 
-### NOP instruction – No OPeration
-Binary form:  **** **** \
-Operation:  no operation \
-Example: NOP
-
-The NOP instruction has only the Fetch portion (present in all instruction), but has nothing in the execution portion of the instruction.
-
-We do not have the NOP instruction on the SAP-1 computer but we need to study it because all 11 unimplemented instruction codes will be treated by the Control Unit and implicitly by the SAP-1 computer as the NOP instruction.
-
-The original timing diagram for the NOP instruction of the SAP-1 computer is:
-
-![ Figure 3 ](/Pictures/Figure3.png)
-
-All instructions of the SAP-1 computer are executed in 6 steps marked in the diagram and in the electrical diagram T1 - T6. The first 3 steps are the Fetch portion and the last 3 are the Execution portion of the instruction. The Fetch portion of the instruction is identical for all instructions. The Execution portion is specific to each individual instruction.
-
-ALL UNIMPLEMENTED INSTRUCTIONS WILL BE TREATED BY THE SAP-1 CPU AS A NOP INSTRUCTION
-
-We can summarize the value of the control signals over time presented in these diagrams in the following table:
-
-![ Table 1 ](/Tables/Table1.png)
-
 Signals represented in Red: *are active when data is written to the Data BUS* \
 Signals represented in Green: *are active when reading data from the Data BUS* \
 Signals shown in Black: *their activation has no influence on the Data BUS*
