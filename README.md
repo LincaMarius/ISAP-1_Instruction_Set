@@ -24,7 +24,7 @@ The original format of the SAP-1 computer instructions is:
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
 
-\ We notice that the upper nibble is used to encode an instruction.
+We notice that the upper nibble is used to encode an instruction.
 
 So, any instruction is encoded on 4 bits.
 
@@ -77,9 +77,15 @@ The SAP-1 computer needs 6 “Steps” to execute the ADD and SUB instructions.
 
 Any Instruction has a FETCH portion, during which it is loaded from RAM into the Instruction Register, followed by the actual execution portion of the instruction.
 
-The original timing diagram for the NOP instruction (which only has the Fetch portion but has nothing in the instruction execution portion of the SAP-1 computer is:
+The original timing diagram for the NOP instruction (which only has the Fetch portion but has nothing in the instruction execution portion) of the SAP-1 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
+
+All instructions of the SAP-1 computer are executed in 6 steps noted in the diagram and wiring diagram T1 - T6. The first 3 steps are the Fetch portion and the last 3 are the Execution portion of the instruction. The Fetch part of the statement is identical for all statements. The Execution part is specific to each individual instruction.
+
+We can summarize the value of the control signals over time presented in these diagrams in the following table:
+
+![ Table 1 ](/Tables/Table1.png)
 
 ### NOP instruction – No OPeration
 Binary form:  **** **** \
