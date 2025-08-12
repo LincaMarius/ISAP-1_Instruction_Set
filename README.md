@@ -11,19 +11,12 @@ https://github.com/LincaMarius
 
 The goal of this project is to create a more efficient version of the SAP (Simple As Possible) computer, but with minimal changes so that the instruction format remains the same.
 
-This project is part of another project made by me: 
+This project is part of another project made by me: \
 https://github.com/LincaMarius/ISAP-1_Computer_Project
 
 where I optimized the SAP-1 calculator step by step to create my own version called ISAP-1 (Improved SAP-1).
 
 ## ISAP-1 Computer Instruction Set revision 1
-The original structure of the SAP-1 computer is identical to the structure of the ISAP-1 computer:
-
-![ Figure 1 ](/Pictures/Figure1.png)
-
-The original Block Diagram of the Central Processing Unit of the SAP-1 computer is identical to that of the ISAP-1 computer:
-
-![ Figure 2 ](/Pictures/Figure2.png)
 
 ### Instruction format
 The original format of the SAP-1 computer instructions is:
@@ -31,7 +24,7 @@ The original format of the SAP-1 computer instructions is:
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
 
-We notice that the upper nibble is used to encode an instruction.
+\ We notice that the upper nibble is used to encode an instruction.
 
 So, any instruction is encoded on 4 bits.
 
@@ -74,6 +67,19 @@ These codes are treated by the SAP-1 computer as NOP instructions, the previous 
 *This is the complete Instruction Set for the SAP-1 computer and for the ISAP-1 computer version 1.0*
 
 So we have the instructions encoded in the first 4 bits, leaving the next 4 bits for encoding the instruction parameter which represents a memory address where the operand is located in the case of the SAP-1 computer.
+
+## FETCH an instruction
+The SAP-1 computer executes an instruction in multiple steps called “Microsteps”.
+
+Their number is chosen to allow the complete execution of the most complex instruction.
+
+The SAP-1 computer needs 6 “Steps” to execute the ADD and SUB instructions.
+
+Any Instruction has a FETCH portion, during which it is loaded from RAM into the Instruction Register, followed by the actual execution portion of the instruction.
+
+The original timing diagram for the NOP instruction (which only has the Fetch portion but has nothing in the instruction execution portion of the SAP-1 computer is:
+
+![ Figure 1 ](/Pictures/Figure1.png)
 
 ### NOP instruction – No OPeration
 Binary form:  **** **** \
