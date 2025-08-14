@@ -266,7 +266,7 @@ Stops further execution of computer instructions.
 
 The timing diagram for the HLT instruction implemented on SAP-1 Computer is as follows:
 
-![ Figure 8 ](/Pictures/Figure8.png)
+![ Figure 6 ](/Pictures/Figure6.png)
 
 We can summarize the value of the control signals over time presented in this diagram in the following table:
 
