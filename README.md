@@ -77,9 +77,22 @@ The SAP-1 computer needs 6 “Steps” to execute the ADD and SUB instructions.
 
 Any Instruction has a FETCH portion, during which it is loaded from RAM into the Instruction Register, followed by the actual execution portion of the instruction.
 
-The original timing diagram for the NOP instruction (which only has the Fetch portion but has nothing in the instruction execution portion) of the SAP-1 computer is:
+The NOP instruction is not included in the SAP-1 computer's Instruction Set but must be studied because, as we have shown previously, the codes 03h to 0Dh are equivalent to the NOP instruction for the SAP-1 computer.
+
+## NOP instruction – No OPeration
+Binary form:  **** **** \
+Operation:  no operation \
+Example: NOP
+
+The NOP instruction has only the Fetch portion (present in all instructions), but has nothing in the execution portion of the instruction.
+
+We do not have the NOP instruction on the SAP-1 computer, but we need to study it because all 11 unimplemented instruction codes will be treated by the control unit and implicitly by the SAP-1 computer as a NOP instruction.
+
+The original timing diagram for the NOP instruction of the SAP-1 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
+
+ALL UNIMPLEMENTED INSTRUCTIONS WILL BE TREATED BY THE ISP-1 CPU AS A NOP INSTRUCTION!
 
 All instructions of the SAP-1 computer are executed in 6 steps noted in the diagram and wiring diagram T1 - T6. The first 3 steps are the Fetch portion and the last 3 are the Execution portion of the instruction. The Fetch part of the statement is identical for all statements. The Execution part is specific to each individual instruction.
 
