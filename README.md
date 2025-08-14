@@ -234,7 +234,7 @@ Since in the case of the SAP-1 computer we only have a single output port, it is
 
 The timing diagram for the OUT instruction implemented on SAP-1 Computer is as follows:
 
-![ Figure 7 ](/Pictures/Figure7.png)
+![ Figure 5 ](/Pictures/Figure5.png)
 
 We can summarize the value of the control signals over time presented in this diagram in the following table:
 
