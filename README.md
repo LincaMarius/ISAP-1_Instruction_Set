@@ -197,7 +197,7 @@ Subtracts the numeric value at Address [n] from the numeric value stored in the 
 
 The timing diagram for the SUB instruction implemented on SAP-1 Computer is as follows:
 
-![ Figure 6 ](/Pictures/Figure6.png)
+![ Figure 4 ](/Pictures/Figure4.png)
 
 We can summarize the value of the control signals over time presented in this diagram in the following table:
 
