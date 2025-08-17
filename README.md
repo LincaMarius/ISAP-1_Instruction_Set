@@ -296,6 +296,10 @@ Signals represented in Red: *are active when data is written to the Data BUS* \
 Signals represented in Green: *are active when reading data from the Data BUS* \
 Signals shown in Black: *their activation has no influence on the Data BUS*
 
+If we put all the output signals on columns and highlight the control signals used by the HLT instruction we obtain the Truth Table for the HLT instruction for the SAP-1 computer.
+
+![ Table 12 ](/Tables/Table12.png)
+
 *If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.*
 
 The Boolean equations for the signals that are active when the HLT instruction is executed for computer SAP-1 are:
