@@ -290,7 +290,7 @@ The timing diagram for the HLT instruction implemented on SAP-1 Computer is as f
 
 We can summarize the value of the control signals over time presented in this diagram in the following table:
 
-![ Table 6 ](/Tables/Table6.png)
+![ Table 11 ](/Tables/Table11.png)
 
 Signals represented in Red: *are active when data is written to the Data BUS* \
 Signals represented in Green: *are active when reading data from the Data BUS* \
